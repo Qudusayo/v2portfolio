@@ -1,0 +1,32 @@
+.Footer {
+  border-top: 1px solid #1e2d3d;
+  color: #607b96;
+  background-color: #011627;
+  display: flex;
+  align-items: flex-end;
+  // height: 25px;
+
+  div {
+    padding: 0.75em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #1e2d3d;
+
+    &:nth-of-type(1) {
+      border: none;
+    }
+
+    &:nth-of-type(3) {
+      border-right: 1px solid #1e2d3d;
+    }
+
+    &:nth-last-of-type(1) {
+      margin-left: auto;
+    }
+
+    span {
+      margin-right: 0.5em;
+    }
+  }
+}

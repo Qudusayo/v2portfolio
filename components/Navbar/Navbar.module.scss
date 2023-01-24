@@ -1,0 +1,59 @@
+.Navbar {
+  display: grid;
+  grid-template-columns: 1.75fr 6fr;
+  border-bottom: 1px solid #1e2d3d;
+  color: #607b96;
+  background-color: #011627;
+
+  &Links {
+    display: flex;
+    list-style-type: none;
+
+    li {
+      padding-inline-start: 0;
+      border-left: 1px solid #1e2d3d;
+
+      &:nth-last-of-type(2) {
+        border-right: 1px solid #1e2d3d;
+      }
+
+      &:nth-last-of-type(1) {
+        margin-left: auto;
+      }
+    }
+  }
+
+  div {
+    a {
+      display: inline-block;
+      padding: 1em;
+      width: 100%;
+    }
+
+    &:nth-of-type(2) {
+      padding: 0;
+    }
+
+    &:nth-last-of-type(1) {
+      padding: 0;
+      border-left: 1px solid #1e2d3d;
+      text-align: center;
+    }
+  }
+
+  .activeRoute {
+    position: relative;
+    a {
+      color: #ffffff;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      position: absolute;
+      left: 0;
+      border-bottom: 3px solid #fea55f;
+      bottom: -1px;
+    }
+  }
+}
