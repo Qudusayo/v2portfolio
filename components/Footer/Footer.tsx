@@ -23,8 +23,8 @@ export default function Footer() {
         </a>
       </div>
       <div>
-        <span className={styles.githubUsername}>@qudusayo</span>
         <a href="https://github.com/qudusayo/" target="_blank" rel="noreferrer">
+          <span className={styles.githubUsername}>@qudusayo</span>
           <FaGithub fill="#607B96" size={25} />
         </a>
       </div>
