@@ -9,14 +9,24 @@ export default function Footer() {
         <span>find me in:</span>
       </div>
       <div>
-        <FaLinkedinIn fill="#607B96" size={25} />
+        <a
+          href="https://www.linkedin.com/in/qudusayo/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaLinkedinIn fill="#607B96" size={25} />
+        </a>
       </div>
       <div>
-        <FaTwitter fill="#607B96" size={25} />
+        <a href="https://twitter.com/qudusayo" target="_blank" rel="noreferrer">
+          <FaTwitter fill="#607B96" size={25} />
+        </a>
       </div>
       <div>
-        <span>@qudusayo</span>
-        <FaGithub fill="#607B96" size={25} />
+        <span className={styles.githubUsername}>@qudusayo</span>
+        <a href="https://github.com/qudusayo/" target="_blank" rel="noreferrer">
+          <FaGithub fill="#607B96" size={25} />
+        </a>
       </div>
     </footer>
   );
