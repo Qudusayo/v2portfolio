@@ -8,6 +8,7 @@
       display: flex;
       align-items: center;
       gap: 0.5em;
+      color: #ffffff;
       cursor: pointer;
 
       .DrawerControlOpen {
@@ -31,6 +32,8 @@
       padding-inline-start: 0;
 
       li {
+        display: inline-block;
+
         a,
         div {
           padding: 1em 1em 0 1em;

@@ -82,13 +82,13 @@ const SideBar = () => {
         </div>
         <ul className={sidebarStyles.SideBarDropdownContent}>
           <li>
-            <a>
+            <a href="mailto:qqudusayo@gmail.com">
               <IoMail fill="#607b96" />
               <span>qqudusayo@gmail.com</span>
             </a>
           </li>
           <li>
-            <a>
+            <a href="tel:+2347042467656">
               <IoCall fill="#607b96" />
               <span>+2347042467656</span>
             </a>
@@ -115,13 +115,21 @@ const SideBar = () => {
         {secondDrawerOpen && (
           <ul className={sidebarStyles.SideBarDropdownContent}>
             <li>
-              <a>
+              <a
+                href="http://discordapp.com/users/712416046317043762"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <IoOpenOutline fill="#607b96" />
                 <span>Discord Profile</span>
               </a>
             </li>
             <li>
-              <a>
+              <a
+                href="https://stackoverflow.com/users/11659301/qudusayo"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <IoOpenOutline fill="#607b96" />
                 <span>Stackoverflow Profile</span>
               </a>
