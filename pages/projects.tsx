@@ -17,11 +17,24 @@ import styles from "@/styles/Projects.module.scss";
 import projects from "@/extras/projects";
 
 export default function Projects() {
+  const [filters, setFilters] = useState<string[]>([]);
+
+  const filter = (filt: string) => {
+    if (filters.includes(filt)) {
+      return setFilters((valv) => [
+        ...valv.filter((targetFilt) => targetFilt !== filt),
+      ]);
+    } else {
+      return setFilters((filts) => [...filts, filt]);
+    }
+  };
+
   return (
     <div>
       <BoxLayout
-        sideBar={<SideBar />}
-        navTitle="Blockchain; React; Opensource; Typescript; NextJs"
+        sideBar={<SideBar filters={filters} filter={filter} />}
+        navTitle={filters.length ? filters.join("; ") : "Projects"}
+        resetEntries={() => setFilters([])}
       >
         <div className={styles.ProjectPreviews}>
           {React.Children.toArray(
@@ -47,7 +60,13 @@ export default function Projects() {
   );
 }
 
-const SideBar = () => {
+const SideBar = ({
+  filter,
+  filters,
+}: {
+  filter: (filt: string) => void;
+  filters: string[];
+}) => {
   const [drawerOpen, setDrawerOpen] = useState(true);
 
   useEffect(() => {
@@ -74,50 +93,47 @@ const SideBar = () => {
         </div>
         {drawerOpen && (
           <ul className={sidebarStyles.SideBarDropdownContent}>
-            <li>
-              <div>
-                <input id="entry1" type="checkbox" />
-                <label htmlFor="entry1">
-                  <SiReact size={20} />
-                  <span>React</span>
-                </label>
-              </div>
-              <div>
-                <input id="entry2" type="checkbox" />
-                <label htmlFor="entry2">
-                  <SiHtml5 size={20} />
-                  <span>HTML5</span>
-                </label>
-              </div>
-              <div>
-                <input id="entry3" type="checkbox" />
-                <label htmlFor="entry3">
-                  <SiOpensourceinitiative size={20} />
-                  <span>OpenSource</span>
-                </label>
-              </div>
-              <div>
-                <input id="entry4" type="checkbox" />
-                <label htmlFor="entry4">
-                  <SiNextdotjs size={20} />
-                  <span>NextJS</span>
-                </label>
-              </div>
-              <div>
-                <input id="entry5" type="checkbox" />
-                <label htmlFor="entry5">
-                  <SiTypescript size={20} />
-                  <span>Typescript</span>
-                </label>
-              </div>
-              <div>
-                <input id="entry6" type="checkbox" />
-                <label htmlFor="entry6">
-                  <SiEthereum size={20} />
-                  <span>Blockchain</span>
-                </label>
-              </div>
-            </li>
+            {[
+              {
+                icon: <SiReact size={20} />,
+                name: "React",
+              },
+              {
+                icon: <SiHtml5 size={20} />,
+                name: "HTML5",
+              },
+              {
+                icon: <SiOpensourceinitiative size={20} />,
+                name: "OpenSource",
+              },
+              {
+                icon: <SiNextdotjs size={20} />,
+                name: "NextJs",
+              },
+              {
+                icon: <SiTypescript size={20} />,
+                name: "Typescript",
+              },
+              {
+                icon: <SiEthereum size={20} />,
+                name: "Blockchain",
+              },
+            ].map((stack, index) => (
+              <li key={index}>
+                <div>
+                  <input
+                    id={`entry1${index}`}
+                    type="checkbox"
+                    checked={filters.includes(stack.name)}
+                    onChange={() => filter(stack.name)}
+                  />
+                  <label htmlFor={`entry1${index}`}>
+                    {stack.icon}
+                    <span>{stack.name}</span>
+                  </label>
+                </div>
+              </li>
+            ))}
           </ul>
         )}
       </nav>

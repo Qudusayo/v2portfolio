@@ -1,0 +1,11 @@
+.Dropdown {
+  &Nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    &Title {
+      padding: 0 !important;
+    }
+  }
+}

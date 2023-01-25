@@ -1,4 +1,6 @@
 .SideBar {
+  height: 100%;
+
   &Dropdown {
     &Header {
       border: 1px solid #1e2d3d;
@@ -32,7 +34,7 @@
       padding-inline-start: 0;
 
       li {
-        display: inline-block;
+        display: block;
 
         a,
         div {
@@ -118,6 +120,24 @@
 
     .SideBarDropdownHeader {
       border-bottom: 0;
+    }
+  }
+
+  &Flex {
+    display: flex;
+
+    &Left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5em;
+      padding-top: 1.5em;
+    }
+
+    &Right {
+      flex: 5;
+      border-left: 1px solid #1e2d3d;
     }
   }
 }
