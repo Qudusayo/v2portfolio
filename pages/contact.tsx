@@ -4,36 +4,45 @@ import { IoCaretForward, IoMail, IoCall, IoOpenOutline } from "react-icons/io5";
 
 import styles from "@/styles/Contact.module.scss";
 import sidebarStyles from "@/components/Sidebar/Sidebar.module.scss";
+import Head from "next/head";
 
 export default function contact() {
   return (
-    <div>
-      <BoxLayout navTitle="contacts" sideBar={<SideBar />}>
-        <div className={styles.Contact}>
-          <form>
-            <div className={styles.ContactForm}>
-              <div className={styles.ContactFormBlock}>
-                <label>_name:</label>
-                <input placeholder="Ayoola Abdulqudus" />
+    <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=2.0"
+        />
+      </Head>
+      <div>
+        <BoxLayout navTitle="contacts" sideBar={<SideBar />}>
+          <div className={styles.Contact}>
+            <form>
+              <div className={styles.ContactForm}>
+                <div className={styles.ContactFormBlock}>
+                  <label>_name:</label>
+                  <input placeholder="Ayoola Abdulqudus" />
+                </div>
+                <div className={styles.ContactFormBlock}>
+                  <label>_email:</label>
+                  <input placeholder="qqudusayo@gmail.com" />
+                </div>
+                <div className={styles.ContactFormBlock}>
+                  <label>_message:</label>
+                  <textarea
+                    placeholder="Hey! Just checked your website and it looks awesome!"
+                    rows={6}
+                  ></textarea>
+                </div>
+                <button>submit-message</button>
               </div>
-              <div className={styles.ContactFormBlock}>
-                <label>_email:</label>
-                <input placeholder="qqudusayo@gmail.com" />
-              </div>
-              <div className={styles.ContactFormBlock}>
-                <label>_message:</label>
-                <textarea
-                  placeholder="Hey! Just checked your website and it looks awesome!"
-                  rows={6}
-                ></textarea>
-              </div>
-              <button>submit-message</button>
-            </div>
-          </form>
-          <section></section>
-        </div>
-      </BoxLayout>
-    </div>
+            </form>
+            <section></section>
+          </div>
+        </BoxLayout>
+      </div>
+    </>
   );
 }
 
