@@ -8,7 +8,31 @@ import sidebarStyles from "@/components/Sidebar/Sidebar.module.scss";
 export default function contact() {
   return (
     <div>
-      <BoxLayout navTitle="contacts" sideBar={<SideBar />} />
+      <BoxLayout navTitle="contacts" sideBar={<SideBar />}>
+        <div className={styles.Contact}>
+          <form>
+            <div className={styles.ContactForm}>
+              <div className={styles.ContactFormBlock}>
+                <label>_name:</label>
+                <input placeholder="Ayoola Abdulqudus" />
+              </div>
+              <div className={styles.ContactFormBlock}>
+                <label>_email:</label>
+                <input placeholder="qqudusayo@gmail.com" />
+              </div>
+              <div className={styles.ContactFormBlock}>
+                <label>_message:</label>
+                <textarea
+                  placeholder="Hey! Just checked your website and it looks awesome!"
+                  rows={6}
+                ></textarea>
+              </div>
+              <button>submit-message</button>
+            </div>
+          </form>
+          <section></section>
+        </div>
+      </BoxLayout>
     </div>
   );
 }

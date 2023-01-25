@@ -21,7 +21,7 @@ export default function BoxLayout({
             <span>{navTitle}</span> <IoClose />
           </div>
         </div>
-        {children}
+        <div className={styles.BoxLayoutContentChildren}>{children}</div>
       </section>
     </div>
   );

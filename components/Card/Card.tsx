@@ -37,16 +37,14 @@ export default function Card({
   mainType,
   previewLink,
 }: {
-  previewImg?: string;
+  previewImg: string;
   mainType: keyof BannerIconsTypes;
   previewLink?: string;
 }) {
   return (
     <div className={styles.Card}>
       <div className={styles.CardBanner}>
-        <img
-          src={previewImg ? previewImg : "/projects-preview/web3afrika.png"}
-        />
+        <img src={previewImg} />
         <div
           style={{ backgroundColor: BannerIcons[mainType].bg }}
           className={styles.CardBannerIcon}

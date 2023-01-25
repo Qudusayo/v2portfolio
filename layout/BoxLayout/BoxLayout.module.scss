@@ -12,7 +12,10 @@
 
   &Content {
     flex: 3;
+    box-sizing: border-box;
     border-left: 1px solid #1e2d3d;
+    display: flex;
+    flex-direction: column;
 
     &Nav {
       border-bottom: 1px solid #1e2d3d;
@@ -29,6 +32,11 @@
           margin-right: 2em;
         }
       }
+    }
+
+    &Children {
+      flex: 1;
+      overflow: auto;
     }
   }
 }

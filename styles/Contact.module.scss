@@ -1,1 +1,61 @@
+.Contact {
+  display: flex;
+  height: 100%;
 
+  form,
+  section {
+    flex: 1;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-right: 1px solid #1e2d3d;
+  }
+
+  &Form {
+    width: 80%;
+    &Block {
+      margin-bottom: 1em;
+
+      label {
+        display: block;
+        color: #607b96;
+        margin-bottom: 0.5em;
+      }
+
+      input,
+      textarea {
+        background-color: #011221;
+        transition: all 0.2s linear;
+        outline: 1px solid transparent;
+        border: 1px solid #1e2d3d;
+        width: 100%;
+        border-radius: 7px;
+        padding: 0.5em 0.75em;
+
+        &:focus {
+          outline: 1px solid #607b96;
+        }
+
+        &::placeholder {
+          color: #465e77;
+        }
+
+        color: #ffffff;
+      }
+    }
+
+    button {
+      outline: none;
+      border: none;
+      background-color: #1c2b3a;
+      color: #ffffff;
+      padding: 0.5em 1em;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import sidebarStyles from "@/components/Sidebar/Sidebar.module.scss";
 import { IoCaretForward } from "react-icons/io5";
@@ -14,7 +14,9 @@ import {
 import Card from "@/components/Card/Card";
 import styles from "@/styles/Projects.module.scss";
 
-export default function projects() {
+import projects from "@/extras/projects";
+
+export default function Projects() {
   return (
     <div>
       <BoxLayout
@@ -22,36 +24,23 @@ export default function projects() {
         navTitle="Blockchain; React; Opensource; Typescript; NextJs"
       >
         <div className={styles.ProjectPreviews}>
-          <Card
-            previewLink="https://web3afrika.com"
-            mainType="react"
-            previewImg="/projects-preview/web3afrika.png"
-          />
-          <Card
-            previewLink="https://rionnigeria.vercel.app/"
-            mainType="next"
-            previewImg="/projects-preview/rionnigeria.png"
-          />
-          <Card
-            previewLink="https://buymeacoffee.qudusayo.me/"
-            mainType="react"
-            previewImg="/projects-preview/support.png"
-          />
-          <Card
-            previewLink="https://github.com/Olanetsoft/web3terms"
-            mainType="opensource"
-            previewImg="/projects-preview/web3terms.png"
-          />
-          <Card
-            previewLink="https://gh-user-sa.qudusayo.me/"
-            mainType="react"
-            previewImg="/projects-preview/devfinder.png"
-          />
-          <Card
-            previewLink="https://general-studies-practice.vercel.app/"
-            mainType="next"
-            previewImg="/projects-preview/quiz.png"
-          />
+          {React.Children.toArray(
+            projects.map((project, index) => {
+              return (
+                <div className={styles.ProjectPreviewsBlock}>
+                  <div className={styles.ProjectPreviewsBlockHeader}>
+                    <span>Project {index + 1} </span>
+                    <span>{`// _${project.name}`}</span>
+                  </div>
+                  <Card
+                    previewLink={project.previewLink}
+                    mainType={project.mainType}
+                    previewImg={project.previewImg}
+                  />
+                </div>
+              );
+            })
+          )}
         </div>
       </BoxLayout>
     </div>
