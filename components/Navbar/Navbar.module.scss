@@ -149,6 +149,10 @@
     border-bottom: none;
     // min-height: 100%;
 
+    &Avtive {
+      height: 100%;
+    }
+
     div:nth-of-type(1) {
       flex: none;
       border-bottom: 1px solid #1e2d3d;

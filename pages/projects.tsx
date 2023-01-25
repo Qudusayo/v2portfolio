@@ -1,5 +1,5 @@
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import sidebarStyles from "@/components/Sidebar/Sidebar.module.scss";
 import { IoCaretForward } from "react-icons/io5";
@@ -49,6 +49,10 @@ export default function Projects() {
 
 const SideBar = () => {
   const [drawerOpen, setDrawerOpen] = useState(true);
+
+  useEffect(() => {
+    if (window.innerWidth <= 700) setDrawerOpen(false);
+  }, []);
 
   return (
     <div className={sidebarStyles.SideBar}>

@@ -39,4 +39,19 @@
       overflow: auto;
     }
   }
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+
+    &SideBar {
+      flex: none;
+      margin-top: 3.25em;
+    }
+
+    &Content {
+      &Nav {
+        display: none;
+      }
+    }
+  }
 }

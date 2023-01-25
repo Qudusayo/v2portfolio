@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
 import { IoCaretForward, IoMail, IoCall, IoOpenOutline } from "react-icons/io5";
 
@@ -40,6 +40,13 @@ export default function contact() {
 const SideBar = () => {
   const [firstDrawerOpen, setFirstDrawerOpen] = useState(true);
   const [secondDrawerOpen, setSecondDrawerOpen] = useState(true);
+
+  useEffect(() => {
+    if (window.innerWidth <= 700) {
+      setFirstDrawerOpen(false);
+      setSecondDrawerOpen(false);
+    }
+  }, []);
 
   return (
     <div className={sidebarStyles.SideBar}>

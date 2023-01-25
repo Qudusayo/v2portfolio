@@ -12,7 +12,9 @@ export default function Navbar() {
   }, [route]);
 
   return (
-    <nav className={styles.Navbar}>
+    <nav
+      className={[styles.Navbar, visibility && styles.NavbarAvtive].join(" ")}
+    >
       <div>
         <Link href={"/"}>Qudusayo</Link>
         <div className={styles.hamburger}>
