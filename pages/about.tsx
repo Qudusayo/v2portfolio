@@ -1,3 +1,9 @@
+import BoxLayout from "@/layout/BoxLayout/BoxLayout";
+
 export default function about() {
-  return <div>about</div>;
+  return (
+    <div>
+      <BoxLayout navTitle="personal-info" />
+    </div>
+  );
 }

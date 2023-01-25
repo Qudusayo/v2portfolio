@@ -16,6 +16,10 @@
         border-right: 1px solid #1e2d3d;
       }
 
+      &:nth-of-type(1) {
+        border-left: none;
+      }
+
       &:nth-last-of-type(1) {
         margin-left: auto;
       }
@@ -35,7 +39,7 @@
   div {
     a {
       display: inline-block;
-      padding: 1em;
+      padding: 1em 2em;
       width: 100%;
     }
 

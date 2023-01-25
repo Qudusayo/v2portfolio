@@ -1,0 +1,30 @@
+.BoxLayout {
+  min-height: 100vh;
+  display: flex;
+
+  &SideBar {
+    flex: 1;
+  }
+
+  &Content {
+    flex: 3;
+    border-left: 1px solid #1e2d3d;
+
+    &Nav {
+      border-bottom: 1px solid #1e2d3d;
+
+      div {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        padding: 0.5em;
+        color: #607b96;
+        border-right: 1px solid #1e2d3d;
+
+        span {
+          margin-right: 2em;
+        }
+      }
+    }
+  }
+}
