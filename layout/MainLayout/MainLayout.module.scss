@@ -1,0 +1,10 @@
+.MainLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &Section {
+    flex: 1;
+    position: relative;
+  }
+}

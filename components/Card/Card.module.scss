@@ -1,0 +1,52 @@
+.Card {
+  border: 1px solid #1e2d3d;
+  border-radius: 7px;
+  height: fit-content;
+
+  img {
+    border-radius: 7px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &Banner {
+    position: relative;
+
+    &Icon {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+
+  &Content {
+    padding: 1em;
+
+    p {
+      font-size: 0.9em;
+      color: #607b96;
+    }
+
+    &Links {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.5em;
+
+      a.btn {
+        font-size: 0.9em;
+        background-color: #1c2b3a;
+        color: #ffffff;
+        padding: 0.5em 1em;
+        border-radius: 5px;
+      }
+    }
+  }
+}

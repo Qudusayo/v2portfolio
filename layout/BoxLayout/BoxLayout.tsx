@@ -4,9 +4,14 @@ import { IoClose } from "react-icons/io5";
 interface BoxLayoutTypes {
   navTitle: string;
   sideBar?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
-export default function BoxLayout({ navTitle, sideBar }: BoxLayoutTypes) {
+export default function BoxLayout({
+  navTitle,
+  sideBar,
+  children,
+}: BoxLayoutTypes) {
   return (
     <div className={styles.BoxLayout}>
       <section className={styles.BoxLayoutSideBar}>{sideBar}</section>
@@ -16,6 +21,7 @@ export default function BoxLayout({ navTitle, sideBar }: BoxLayoutTypes) {
             <span>{navTitle}</span> <IoClose />
           </div>
         </div>
+        {children}
       </section>
     </div>
   );
