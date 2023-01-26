@@ -113,11 +113,6 @@
   }
 
   .firstDrawerOpen {
-    ul {
-      transition: display, 0.2s linear;
-      display: none;
-    }
-
     .SideBarDropdownHeader {
       border-bottom: 0;
     }

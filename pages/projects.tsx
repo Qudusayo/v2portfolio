@@ -16,6 +16,7 @@ import styles from "@/styles/Projects.module.scss";
 
 import projects from "@/extras/projects";
 import Head from "next/head";
+import Sidebar from "@/components/Sidebar/Sidebar";
 
 export default function Projects() {
   const [filters, setFilters] = useState<string[]>([]);
@@ -38,7 +39,54 @@ export default function Projects() {
       </Head>
       <div>
         <BoxLayout
-          sideBar={<SideBar filters={filters} filter={filter} />}
+          sideBar={
+            <Sidebar
+              contents={[
+                {
+                  title: "projects",
+                  content: [
+                    {
+                      icon: <SiReact size={20} />,
+                      name: "React",
+                    },
+                    {
+                      icon: <SiHtml5 size={20} />,
+                      name: "HTML5",
+                    },
+                    {
+                      icon: <SiOpensourceinitiative size={20} />,
+                      name: "OpenSource",
+                    },
+                    {
+                      icon: <SiNextdotjs size={20} />,
+                      name: "NextJs",
+                    },
+                    {
+                      icon: <SiTypescript size={20} />,
+                      name: "Typescript",
+                    },
+                    {
+                      icon: <SiEthereum size={20} />,
+                      name: "Blockchain",
+                    },
+                  ].map((stack, index) => (
+                    <div key={index}>
+                      <input
+                        id={`entry1${index}`}
+                        type="checkbox"
+                        checked={filters.includes(stack.name)}
+                        onChange={() => filter(stack.name)}
+                      />
+                      <label htmlFor={`entry1${index}`}>
+                        {stack.icon}
+                        <span>{stack.name}</span>
+                      </label>
+                    </div>
+                  )),
+                },
+              ]}
+            />
+          }
           navTitle={filters.length ? filters.join("; ") : "Projects"}
           resetEntries={() => setFilters([])}
         >
@@ -66,84 +114,3 @@ export default function Projects() {
     </>
   );
 }
-
-const SideBar = ({
-  filter,
-  filters,
-}: {
-  filter: (filt: string) => void;
-  filters: string[];
-}) => {
-  const [drawerOpen, setDrawerOpen] = useState(true);
-
-  useEffect(() => {
-    if (window.innerWidth <= 700) setDrawerOpen(false);
-  }, []);
-
-  return (
-    <div className={sidebarStyles.SideBar}>
-      <nav className={sidebarStyles.SideBarDropdown}>
-        <div
-          className={sidebarStyles.SideBarDropdownHeader}
-          onClick={() =>
-            setDrawerOpen((firstDrawerStatus) => !firstDrawerStatus)
-          }
-        >
-          <IoCaretForward
-            className={
-              drawerOpen
-                ? sidebarStyles.DrawerControlOpen
-                : sidebarStyles.DrawerControlClose
-            }
-          />{" "}
-          <span>projects</span>
-        </div>
-        {drawerOpen && (
-          <ul className={sidebarStyles.SideBarDropdownContent}>
-            {[
-              {
-                icon: <SiReact size={20} />,
-                name: "React",
-              },
-              {
-                icon: <SiHtml5 size={20} />,
-                name: "HTML5",
-              },
-              {
-                icon: <SiOpensourceinitiative size={20} />,
-                name: "OpenSource",
-              },
-              {
-                icon: <SiNextdotjs size={20} />,
-                name: "NextJs",
-              },
-              {
-                icon: <SiTypescript size={20} />,
-                name: "Typescript",
-              },
-              {
-                icon: <SiEthereum size={20} />,
-                name: "Blockchain",
-              },
-            ].map((stack, index) => (
-              <li key={index}>
-                <div>
-                  <input
-                    id={`entry1${index}`}
-                    type="checkbox"
-                    checked={filters.includes(stack.name)}
-                    onChange={() => filter(stack.name)}
-                  />
-                  <label htmlFor={`entry1${index}`}>
-                    {stack.icon}
-                    <span>{stack.name}</span>
-                  </label>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </nav>
-    </div>
-  );
-};
