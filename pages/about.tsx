@@ -6,11 +6,72 @@ import { RiTerminalBoxFill, RiGamepadFill, RiUser4Fill } from "react-icons/ri";
 import sidebarStyles from "@/components/Sidebar/Sidebar.module.scss";
 import { Dropdown } from "@/components/Dropdown/Dropdown";
 
+import styles from "@/styles/About.module.scss";
+import Head from "next/head";
+
 export default function about() {
   return (
-    <div>
-      <BoxLayout sideBar={<SideBar />} navTitle="personal-info" />
-    </div>
+    <>
+      <Head>
+        <title>Qudusayo - About</title>
+        <meta name="description" content="About Qudusayo" />
+      </Head>
+      <div>
+        <BoxLayout sideBar={<SideBar />} navTitle="personal-info">
+          <div className={styles.About}>
+            <div className={styles.AboutInfo}>
+              <pre className={styles.code}>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>{"/**"}</code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>About me</code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>Lorem ipsum dolor sit amet </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>consectetur adipisicing elit.</code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>Labore incidunt minima omnis ea </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>suscipit necessitatibus itaque!</code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>ipsam autem temporibus culpa</code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>oluptates quibusdam commodi,</code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>laboriosam assumenda inventore</code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code> ipsa saepe excepturi dolorum </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>*/</code>
+                </span>
+              </pre>
+            </div>
+            <div className={styles.AboutCodePreview}></div>
+          </div>
+        </BoxLayout>
+      </div>
+    </>
   );
 }
 
@@ -58,13 +119,26 @@ const SideBar = () => {
           </div>
           <ul className={sidebarStyles.SideBarDropdownContent}>
             <li>
-              <Dropdown folderFill="#E99287" title="bio" />
+              <Dropdown
+                folderFill="#E99287"
+                title="bio"
+                entries={["biography"]}
+                active={true}
+              />
             </li>
             <li>
-              <Dropdown folderFill="#43D9AD" title="interests" />
+              <Dropdown
+                folderFill="#43D9AD"
+                title="interests"
+                entries={["hobbies"]}
+              />
             </li>
             <li>
-              <Dropdown folderFill="#3A49A4" title="education" />
+              <Dropdown
+                folderFill="#3A49A4"
+                title="education"
+                entries={["high-school", "university"]}
+              />
             </li>
           </ul>
         </nav>

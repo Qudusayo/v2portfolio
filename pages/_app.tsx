@@ -11,6 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=2.0"
         />
+        <title>Qudusayo</title>
       </Head>
       <Layout>
         <Component {...pageProps} />

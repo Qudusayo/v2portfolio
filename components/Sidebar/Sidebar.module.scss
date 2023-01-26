@@ -133,6 +133,10 @@
       align-items: center;
       gap: 1.5em;
       padding-top: 1.5em;
+
+      @media screen and (max-width: 700px) {
+        display: none;
+      }
     }
 
     &Right {

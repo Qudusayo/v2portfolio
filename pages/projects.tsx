@@ -15,6 +15,7 @@ import Card from "@/components/Card/Card";
 import styles from "@/styles/Projects.module.scss";
 
 import projects from "@/extras/projects";
+import Head from "next/head";
 
 export default function Projects() {
   const [filters, setFilters] = useState<string[]>([]);
@@ -30,33 +31,39 @@ export default function Projects() {
   };
 
   return (
-    <div>
-      <BoxLayout
-        sideBar={<SideBar filters={filters} filter={filter} />}
-        navTitle={filters.length ? filters.join("; ") : "Projects"}
-        resetEntries={() => setFilters([])}
-      >
-        <div className={styles.ProjectPreviews}>
-          {React.Children.toArray(
-            projects.map((project, index) => {
-              return (
-                <div className={styles.ProjectPreviewsBlock}>
-                  <div className={styles.ProjectPreviewsBlockHeader}>
-                    <span>Project {index + 1} </span>
-                    <span>{`// _${project.name}`}</span>
+    <>
+      <Head>
+        <title>Qudusayo - Projects</title>
+        <meta name="description" content="Works from Qudusayo" />
+      </Head>
+      <div>
+        <BoxLayout
+          sideBar={<SideBar filters={filters} filter={filter} />}
+          navTitle={filters.length ? filters.join("; ") : "Projects"}
+          resetEntries={() => setFilters([])}
+        >
+          <div className={styles.ProjectPreviews}>
+            {React.Children.toArray(
+              projects.map((project, index) => {
+                return (
+                  <div className={styles.ProjectPreviewsBlock}>
+                    <div className={styles.ProjectPreviewsBlockHeader}>
+                      <span>Project {index + 1} </span>
+                      <span>{`// _${project.name}`}</span>
+                    </div>
+                    <Card
+                      previewLink={project.previewLink}
+                      mainType={project.mainType}
+                      previewImg={project.previewImg}
+                    />
                   </div>
-                  <Card
-                    previewLink={project.previewLink}
-                    mainType={project.mainType}
-                    previewImg={project.previewImg}
-                  />
-                </div>
-              );
-            })
-          )}
-        </div>
-      </BoxLayout>
-    </div>
+                );
+              })
+            )}
+          </div>
+        </BoxLayout>
+      </div>
+    </>
   );
 }
 

@@ -1,0 +1,167 @@
+.About {
+  display: flex;
+  height: 100%;
+  gap: 2em;
+  color: #607b96;
+
+  &Info,
+  &CodePreview {
+    flex: 1;
+  }
+
+  &CodePreview {
+    border-left: 1px solid #1e2d3d;
+  }
+
+  &Info {
+    // color: #ffffff;
+    // width: 50vw;
+    // box-decoration-break: clone;
+    border-right: 1px solid #1e2d3d;
+
+    .code {
+      display: table;
+      table-layout: fixed;
+      width: 100%; /* anything but auto, otherwise fixed layout not guaranteed */
+      white-space: pre-wrap;
+
+      &::before {
+        counter-reset: linenum;
+      }
+
+      span.tr {
+        display: table-row;
+        counter-increment: linenum;
+
+        code {
+          &::before {
+            content: " * ";
+          }
+        }
+
+        &:nth-of-type(1) {
+          code {
+            &::before {
+              content: "";
+            }
+          }
+        }
+
+        &:nth-last-of-type(1) {
+          code {
+            &::before {
+              content: " ";
+            }
+          }
+        }
+      }
+
+      span.th {
+        /* used for line numbers */
+        display: table-cell;
+        user-select: none;
+        width: 2.5em;
+
+        &::before {
+          content: counter(linenum);
+          text-align: right;
+          display: block;
+        }
+      }
+
+      span.th span.th {
+        width: 4em; /* or whatever the desired width of the numbers column is */
+      }
+
+      code {
+        display: table-cell;
+        color: #607b96;
+        padding-left: 2em !important;
+      }
+
+      /* Additional styling demo */
+
+      // width: 100%;
+
+      span.th {
+        padding: 3px;
+        padding-top: 0px;
+      }
+
+      span.th::before {
+        font-size: 90%;
+        color: #607b96;
+      }
+
+      span.tr.firstRow span.th {
+        border-top: none;
+      }
+
+      code {
+        padding: 3px;
+      }
+
+      span.e code {
+        background: #f0f8ff;
+      }
+
+      span.th::before {
+        content: counter(linenum) "";
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    display: block;
+
+    &Info {
+      margin: 1em auto !important;
+    }
+
+    &Info,
+    &CodePreview {
+      border: none;
+      width: 90%;
+      margin: auto;
+    }
+
+    &Info {
+      .code {
+        display: table;
+        table-layout: fixed;
+        width: 100%; /* anything but auto, otherwise fixed layout not guaranteed */
+        white-space: pre-wrap;
+
+        span.tr {
+          display: inline;
+          line-height: 1.5em;
+
+          code {
+            &::before {
+              content: "";
+            }
+          }
+        }
+
+        span.th {
+          /* used for line numbers */
+          display: none;
+
+          &::before {
+            content: "";
+          }
+        }
+
+        span.th span.th {
+          width: 4em;
+        }
+
+        code {
+          display: inline;
+          color: #607b96;
+          padding-left: 0 !important;
+        }
+      }
+    }
+  }
+}

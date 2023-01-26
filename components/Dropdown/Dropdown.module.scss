@@ -1,11 +1,53 @@
 .Dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #ffffff;
+
+  &Active {
+    &Nav {
+    }
+  }
+
   &Nav {
     display: flex;
     align-items: center;
     gap: 0.5em;
+    width: 100%;
 
     &Title {
       padding: 0 !important;
+
+      span.active {
+        color: #ffffff !important;
+      }
+
+      &Inactive {
+        transition: all 0.2s linear;
+        transform: rotate(0deg);
+      }
+
+      &Active {
+        transition: all 0.2s linear;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &Entries {
+    width: 100%;
+    margin: 0;
+    padding: 0 !important;
+
+    ul {
+      padding-left: 1.5em;
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        padding: 0 !important;
+        padding-top: 0.5em !important;
+      }
     }
   }
 }
