@@ -1,13 +1,40 @@
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
-import { IoCaretForward, IoMail, IoCall, IoOpenOutline } from "react-icons/io5";
+import { IoMail, IoCall, IoOpenOutline } from "react-icons/io5";
 
 import styles from "@/styles/Contact.module.scss";
-import sidebarStyles from "@/components/Sidebar/Sidebar.module.scss";
 import Head from "next/head";
 import Sidebar from "@/components/Sidebar/Sidebar";
 
-export default function contact() {
+export default function Contact() {
+  const [formEntries, setFormEntries] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [msgSent, setMsgSent] = useState(false);
+
+  const formSubmitHandler = (e: React.FormEvent) => {
+    e.preventDefault();
+    let data = {
+      ...formEntries,
+    };
+
+    setMsgSent(true);
+  };
+
+  const formEntriesHandler = (
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    let key = e.currentTarget.name;
+    let value = e.currentTarget.value;
+
+    setFormEntries((formEntrys) => ({
+      ...formEntrys,
+      [key]: value,
+    }));
+  };
+
   return (
     <>
       <Head>
@@ -61,26 +88,60 @@ export default function contact() {
           }
         >
           <div className={styles.Contact}>
-            <form>
-              <div className={styles.ContactForm}>
-                <div className={styles.ContactFormBlock}>
-                  <label>_name:</label>
-                  <input placeholder="Ayoola Abdulqudus" />
+            <section>
+              <form
+                onSubmit={formSubmitHandler}
+                className={!msgSent ? styles.fadeIn : styles.fadeOut}
+              >
+                <div className={styles.ContactForm}>
+                  <div className={styles.ContactFormBlock}>
+                    <label>_name:</label>
+                    <input
+                      placeholder="Ayoola Abdulqudus"
+                      name="name"
+                      value={formEntries.name}
+                      onChange={formEntriesHandler}
+                    />
+                  </div>
+                  <div className={styles.ContactFormBlock}>
+                    <label>_email:</label>
+                    <input
+                      placeholder="qqudusayo@gmail.com"
+                      name="email"
+                      value={formEntries.email}
+                      onChange={formEntriesHandler}
+                    />
+                  </div>
+                  <div className={styles.ContactFormBlock}>
+                    <label>_message:</label>
+                    <textarea
+                      placeholder="Hey! Just checked your website and it looks awesome!"
+                      rows={6}
+                      name="message"
+                      value={formEntries.message}
+                      onChange={formEntriesHandler}
+                    ></textarea>
+                  </div>
+                  <button>submit-message</button>
                 </div>
-                <div className={styles.ContactFormBlock}>
-                  <label>_email:</label>
-                  <input placeholder="qqudusayo@gmail.com" />
-                </div>
-                <div className={styles.ContactFormBlock}>
-                  <label>_message:</label>
-                  <textarea
-                    placeholder="Hey! Just checked your website and it looks awesome!"
-                    rows={6}
-                  ></textarea>
-                </div>
-                <button>submit-message</button>
+              </form>
+
+              <div
+                className={[
+                  styles.ThankYou,
+                  msgSent ? styles.fadeIn : styles.fadeOut,
+                ].join(" ")}
+              >
+                <h2>Thank you! 🤘</h2>
+                <p>
+                  Your message has been accepted. You will recieve answer really
+                  soon!
+                </p>
+                <button onClick={() => setMsgSent(false)}>
+                  send-new-message
+                </button>
               </div>
-            </form>
+            </section>
             <section></section>
           </div>
         </BoxLayout>
