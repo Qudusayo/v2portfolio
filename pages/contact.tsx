@@ -7,6 +7,7 @@ import Head from "next/head";
 import Sidebar from "@/components/Sidebar/Sidebar";
 
 export default function Contact() {
+  let [day, mon, date] = Date().split(" ");
   const [formEntries, setFormEntries] = useState({
     name: "",
     email: "",
@@ -21,6 +22,15 @@ export default function Contact() {
     };
 
     setMsgSent(true);
+  };
+
+  const resetFormEntries = () => {
+    setFormEntries({
+      name: "",
+      email: "",
+      message: "",
+    });
+    return setMsgSent(false);
   };
 
   const formEntriesHandler = (
@@ -137,15 +147,120 @@ export default function Contact() {
                   Your message has been accepted. You will recieve answer really
                   soon!
                 </p>
-                <button onClick={() => setMsgSent(false)}>
-                  send-new-message
-                </button>
+                <button onClick={resetFormEntries}>send-new-message</button>
               </div>
             </section>
-            <section></section>
+            <section>
+              <pre className={styles.code}>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>
+                    <Ln val="const " />
+                    <Pr val="button" />
+                    <Ln val=" = " />
+                    <Pr val="document.querySelector" />
+                    <Sy val="(" />
+                    <Or val="'#sendBtn'" />
+                    <Sy val=");" />
+                  </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code></code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>
+                    <Ln val="const " />
+                    <Pr val="message" />
+                    <Pr val=" = " />
+                    <Sy val="{" />
+                  </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>
+                    <Pr val=" name: " />
+                    <Or val={`"${formEntries.name}",`} />
+                  </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>
+                    <Pr val=" email: " />
+                    <Or val={`"${formEntries.email}",`} />
+                  </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>
+                    <Pr val=" message: " />
+                    <Or val={`"${formEntries.message}",`} />
+                  </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>
+                    <Pr val=" date: " />
+                    <Or val={`"${day} ${date} ${mon}"`} />
+                  </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>{`}`}</code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code></code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>
+                    <Pr val="button" />
+                    <Sy val="." />
+                    <Pr val="addEventListener" />
+                    <Sy val="(" />
+                    <Or val="'click'" />
+                    <Sy val=", () " />
+                    <Ln val="=>" />
+                    <Sy val=" {" />
+                  </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>
+                    <Pr val=" form" />
+                    <Sy val="." />
+                    <Pr val="send" />
+                    <Sy val="(" />
+                    <Pr val="message" />
+                    <Sy val=");" />
+                  </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>
+                    <Sy val="})" />
+                  </code>
+                </span>
+              </pre>
+            </section>
           </div>
         </BoxLayout>
       </div>
     </>
   );
 }
+
+const Pr = ({ val }: { val: string }) => (
+  <span className={styles.pr}>{val}</span>
+);
+const Or = ({ val }: { val: string }) => (
+  <span className={styles.or}>{val}</span>
+);
+const Ln = ({ val }: { val: string }) => (
+  <span className={styles.in}>{val}</span>
+);
+const Sy = ({ val }: { val: string }) => (
+  <span className={styles.sy}>{val}</span>
+);
