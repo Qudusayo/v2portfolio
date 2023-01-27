@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: auto;
 
     &:nth-of-type(1) {
       border-right: 1px solid #1e2d3d;
@@ -135,7 +136,7 @@
   &Form {
     width: 100%;
     max-width: 350px;
-    
+
     &Block {
       margin-bottom: 1em;
 
