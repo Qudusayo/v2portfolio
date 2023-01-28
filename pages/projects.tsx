@@ -1,8 +1,5 @@
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
-import React, { useEffect, useState } from "react";
-
-import sidebarStyles from "@/components/Sidebar/Sidebar.module.scss";
-import { IoCaretForward } from "react-icons/io5";
+import React, { useState } from "react";
 import {
   SiNextdotjs,
   SiTypescript,
@@ -100,6 +97,7 @@ export default function Projects() {
                       <span>{`// _${project.name}`}</span>
                     </div>
                     <Card
+                      alt={project.name}
                       previewLink={project.previewLink}
                       mainType={project.mainType}
                       previewImg={project.previewImg}

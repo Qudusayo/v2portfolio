@@ -66,7 +66,7 @@ export default function Contact() {
                     </a>,
                     <a key={1} href="tel:+2347042467656">
                       <IoCall fill="#607b96" />
-                      <span>+2347042467656</span>
+                      <span>+(234)704-2467-676</span>
                     </a>,
                   ],
                 },

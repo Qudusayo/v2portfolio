@@ -2,6 +2,7 @@ import { VscGithubAlt } from "react-icons/vsc";
 import { SiReact, SiOpensourceinitiative, SiNextdotjs } from "react-icons/si";
 
 import styles from "./Card.module.scss";
+import Image from "next/image";
 interface BannerIconsTypes {
   [key: string]: {
     icon: React.ReactElement;
@@ -33,10 +34,12 @@ const BannerIcons: BannerIconsTypes = {
 };
 
 export default function Card({
+  alt,
   previewImg,
   mainType,
   previewLink,
 }: {
+  alt: string;
   previewImg: string;
   mainType: keyof BannerIconsTypes;
   previewLink?: string;
@@ -44,7 +47,15 @@ export default function Card({
   return (
     <div className={styles.Card}>
       <div className={styles.CardBanner}>
-        <img src={previewImg} />
+        {/* <img src={previewImg} /> */}
+        <Image
+          src={previewImg}
+          width={200}
+          height={115}
+          layout="responsive"
+          objectFit="cover"
+          alt={alt}
+        />
         <div
           style={{ backgroundColor: BannerIcons[mainType].bg }}
           className={styles.CardBannerIcon}

@@ -1,6 +1,19 @@
 .SideBar {
   height: 100%;
 
+  &MobileTitle {
+    color: #ffffff;
+    padding: 1.5em 1em;
+    display: none;
+    // position: sticky;
+    // top: 0;
+    // background-color: #011627;
+
+    @media screen and (max-width: 700px) {
+      display: block;
+    }
+  }
+
   &Dropdown {
     &Header {
       border: 1px solid #1e2d3d;
@@ -128,6 +141,7 @@
       align-items: center;
       gap: 1.5em;
       padding-top: 1.5em;
+      min-width: 45px;
 
       @media screen and (max-width: 700px) {
         display: none;
@@ -137,6 +151,10 @@
     &Right {
       flex: 5;
       border-left: 1px solid #1e2d3d;
+
+      @media screen and (max-width: 700px) {
+        border: none;
+      }
     }
   }
 }

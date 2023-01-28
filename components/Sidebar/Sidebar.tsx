@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Sidebar.module.scss";
 
 import { IoCaretForward } from "react-icons/io5";
 import useCollapse from "react-collapsed";
+import { useRouter } from "next/router";
 
 export default function Sidebar({
   contents,
@@ -19,8 +20,11 @@ export default function Sidebar({
   //   }
   // }, []);
 
+  const { route } = useRouter();
+
   return (
     <div className={styles.SideBar}>
+      <div className={styles.SideBarMobileTitle}>{"_" + route.slice(1)}</div>
       {contents?.map((content, index) => (
         <Drawer
           isFirstDrawer={contents.length > 1 && index === 0}
@@ -42,9 +46,17 @@ const Drawer = ({
   isFirstDrawer?: boolean;
   entries: Array<React.ReactElement>;
 }) => {
-  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse({
-    defaultExpanded: true,
+  const [isExpanded, setisExpanded] = useState<boolean>(false);
+  const { getCollapseProps, getToggleProps } = useCollapse({
+    isExpanded,
+    defaultExpanded: false,
   });
+
+  useEffect(() => {
+    if (window.innerWidth > 700) {
+      setisExpanded(true);
+    }
+  }, []);
 
   return (
     <nav
@@ -53,7 +65,10 @@ const Drawer = ({
         !isExpanded && isFirstDrawer && styles.firstDrawerOpen,
       ].join(" ")}
     >
-      <div className={styles.SideBarDropdownHeader} {...getToggleProps()}>
+      <div
+        className={styles.SideBarDropdownHeader}
+        {...getToggleProps({ onClick: () => setisExpanded((x) => !x) })}
+      >
         <IoCaretForward
           className={
             isExpanded ? styles.DrawerControlOpen : styles.DrawerControlClose

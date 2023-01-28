@@ -57,8 +57,10 @@ export default function Navbar() {
           <li className={route === "/" ? styles.activeRoute : styles.link}>
             <Link href={"/"}>_hello</Link>
           </li>
-          <li className={route === "/about" ? styles.activeRoute : styles.link}>
-            <Link href={"/about"}>_about-me</Link>
+          <li
+            className={route === "/about-me" ? styles.activeRoute : styles.link}
+          >
+            <Link href={"/about-me"}>_about-me</Link>
           </li>
           <li
             className={route === "/projects" ? styles.activeRoute : styles.link}
@@ -66,9 +68,11 @@ export default function Navbar() {
             <Link href={"/projects"}>_projects</Link>
           </li>
           <li
-            className={route === "/contact" ? styles.activeRoute : styles.link}
+            className={
+              route === "/contact-me" ? styles.activeRoute : styles.link
+            }
           >
-            <Link href={"/contact"}>_contact-me</Link>
+            <Link href={"/contact-me"}>_contact-me</Link>
           </li>
         </ul>
       </div>

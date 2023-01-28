@@ -11,7 +11,7 @@ import Head from "next/head";
 import useCollapse from "react-collapsed";
 import Sidebar from "@/components/Sidebar/Sidebar";
 
-export default function about() {
+export default function About() {
   return (
     <>
       <Head>
@@ -134,7 +134,7 @@ const FlexSideBar = () => {
                 </a>,
                 <a key={1} href="tel:+2347042467656">
                   <IoCall fill="#607b96" />
-                  <span>+2347042467656</span>
+                  <span>+(234)704-2467-676</span>
                 </a>,
               ],
             },
