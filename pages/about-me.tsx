@@ -132,9 +132,9 @@ const FlexSideBar = () => {
                   <IoMail fill="#607b96" />
                   <span>qqudusayo@gmail.com</span>
                 </a>,
-                <a key={1} href="tel:+2347042467656">
+                <a key={1} href="tel:+2347016412041">
                   <IoCall fill="#607b96" />
-                  <span>+(234)704-2467-676</span>
+                  <span>+(234)701-6412-041</span>
                 </a>,
               ],
             },

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
 import { IoMail, IoCall, IoOpenOutline } from "react-icons/io5";
 
@@ -15,13 +16,24 @@ export default function Contact() {
   });
   const [msgSent, setMsgSent] = useState(false);
 
-  const formSubmitHandler = (e: React.FormEvent) => {
+  const formSubmitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     let data = {
       ...formEntries,
     };
 
-    setMsgSent(true);
+    let req = await axios({
+      url: `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`,
+      method: "post",
+      headers: {
+        Accept: "application/json",
+      },
+      data,
+    });
+    console.log(req);
+    if (req.status === 200) {
+      return setMsgSent(true);
+    }
   };
 
   const resetFormEntries = () => {
@@ -64,9 +76,9 @@ export default function Contact() {
                       <IoMail fill="#607b96" />
                       <span>qqudusayo@gmail.com</span>
                     </a>,
-                    <a key={1} href="tel:+2347042467656">
+                    <a key={1} href="tel:+2347016412041">
                       <IoCall fill="#607b96" />
-                      <span>+(234)704-2467-676</span>
+                      <span>+(234)701-6412-041</span>
                     </a>,
                   ],
                 },
