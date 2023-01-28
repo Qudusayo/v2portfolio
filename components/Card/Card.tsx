@@ -93,11 +93,17 @@ export default function Card({
             href={previewLink}
             target="_blank"
             rel="noreferrer"
+            aria-label={alt + " preview"}
             className={styles.btn}
           >
             view-project
           </a>
-          <a href="https://github.com" target="_blank" rel="noreferrer">
+          <a
+            aria-label={alt + " github link"}
+            href="https://github.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             <VscGithubAlt fill="#607B96" size={25} />
           </a>
         </div>

@@ -41,6 +41,8 @@ export default function Navbar() {
           <input
             id="checkbox"
             type="checkbox"
+            aria-hidden="true"
+            tabIndex={-1}
             className={styles.hamburger_check}
             defaultChecked={visibility}
             onChange={() => setVisibility((visibility) => !visibility)}

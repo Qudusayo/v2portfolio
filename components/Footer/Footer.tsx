@@ -10,6 +10,7 @@ export default function Footer() {
       </div>
       <div>
         <a
+          aria-label="Qudusayo linkedin profile"
           href="https://www.linkedin.com/in/qudusayo/"
           target="_blank"
           rel="noreferrer"
@@ -18,12 +19,22 @@ export default function Footer() {
         </a>
       </div>
       <div>
-        <a href="https://twitter.com/qudusayo" target="_blank" rel="noreferrer">
+        <a
+          aria-label="Qudusayo twitter profile"
+          href="https://twitter.com/qudusayo"
+          target="_blank"
+          rel="noreferrer"
+        >
           <RiTwitterFill fill="#607B96" size={25} />
         </a>
       </div>
       <div>
-        <a href="https://github.com/qudusayo/" target="_blank" rel="noreferrer">
+        <a
+          aria-label="Qudusayo github profile"
+          href="https://github.com/qudusayo/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <span className={styles.githubUsername}>@qudusayo</span>
           <RiGithubFill fill="#607B96" size={25} />
         </a>
