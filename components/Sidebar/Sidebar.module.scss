@@ -55,7 +55,7 @@
           display: flex;
           align-items: center;
           gap: 0.5em;
-          color: #607b96;
+          color: #8CA5B5;
         }
 
         &:nth-last-of-type(1) {
@@ -102,7 +102,7 @@
             }
             &:checked {
               color: white;
-              border-color: #607b96;
+              border-color: #8CA5B5;
               background: #607b96;
               &::before {
                 opacity: 1;

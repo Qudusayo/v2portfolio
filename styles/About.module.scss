@@ -2,7 +2,7 @@
   display: flex;
   height: 100%;
   gap: 2em;
-  color: #607b96;
+  color: #8CA5B5;
 
   &Info,
   &CodePreview {
@@ -75,7 +75,7 @@
 
       code {
         display: table-cell;
-        color: #607b96;
+        color: #8CA5B5;
         padding-left: 2em !important;
       }
 
@@ -90,7 +90,7 @@
 
       span.th::before {
         font-size: 90%;
-        color: #607b96;
+        color: #8CA5B5;
       }
 
       span.tr.firstRow span.th {
@@ -159,7 +159,7 @@
 
         code {
           display: inline;
-          color: #607b96;
+          color: #8CA5B5;
           padding-left: 0 !important;
         }
       }
