@@ -1,11 +1,12 @@
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   SiNextdotjs,
   SiTypescript,
   SiReact,
   SiHtml5,
   SiEthereum,
+  SiNodedotjs,
   SiOpensourceinitiative,
 } from "react-icons/si";
 import Card from "@/components/Card/Card";
@@ -14,9 +15,11 @@ import styles from "@/styles/Projects.module.scss";
 import projects from "@/extras/projects";
 import Head from "next/head";
 import Sidebar from "@/components/Sidebar/Sidebar";
+import { ProjectTypes } from "@/types";
 
 export default function Projects() {
   const [filters, setFilters] = useState<string[]>([]);
+  const [filteredList, setFilteredList] = useState<ProjectTypes[]>([]);
 
   const filter = (filt: string) => {
     if (filters.includes(filt)) {
@@ -27,6 +30,20 @@ export default function Projects() {
       return setFilters((filts) => [...filts, filt]);
     }
   };
+
+  useEffect(() => {
+    if (filters.length) {
+      let filtedProjects = projects.filter((project) => {
+        let vals = project.category.filter((projectCategory) => {
+          if (filters.includes(projectCategory)) return true;
+        });
+        if (vals.length) return true;
+      });
+      setFilteredList(filtedProjects);
+    } else {
+      setFilteredList(projects);
+    }
+  }, [filters]);
 
   return (
     <>
@@ -63,6 +80,10 @@ export default function Projects() {
                       name: "Typescript",
                     },
                     {
+                      icon: <SiNodedotjs size={20} />,
+                      name: "NodeJs",
+                    },
+                    {
                       icon: <SiEthereum size={20} />,
                       name: "Blockchain",
                     },
@@ -89,7 +110,7 @@ export default function Projects() {
         >
           <div className={styles.ProjectPreviews}>
             {React.Children.toArray(
-              projects.map((project, index) => {
+              filteredList.map((project, index) => {
                 return (
                   <div className={styles.ProjectPreviewsBlock}>
                     <div className={styles.ProjectPreviewsBlockHeader}>
