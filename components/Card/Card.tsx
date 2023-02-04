@@ -57,16 +57,17 @@ export default function Card({
   previewImg,
   mainType,
   previewLink,
+  description,
 }: {
   alt: string;
   previewImg: string;
   mainType: keyof BannerIconsTypes;
   previewLink?: string;
+  description: string;
 }) {
   return (
     <div className={styles.Card}>
       <div className={styles.CardBanner}>
-        {/* <img src={previewImg} /> */}
         <Image
           src={previewImg}
           width={200}
@@ -87,7 +88,7 @@ export default function Card({
         </div>
       </div>
       <div className={styles.CardContent}>
-        <p>Duis aute irure dolor in velit esse cillum dolore.</p>
+        <p>{description}</p>
         <div className={styles.CardContentLinks}>
           <a
             href={previewLink}

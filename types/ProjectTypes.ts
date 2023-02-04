@@ -4,4 +4,5 @@ export interface ProjectTypes {
   previewImg: string;
   previewLink: string;
   category: string[];
+  description: string;
 }

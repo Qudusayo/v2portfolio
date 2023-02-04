@@ -122,6 +122,7 @@ export default function Projects() {
                       previewLink={project.previewLink}
                       mainType={project.mainType}
                       previewImg={project.previewImg}
+                      description={project.description}
                     />
                   </div>
                 );
