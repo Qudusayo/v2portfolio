@@ -1,5 +1,5 @@
 import { VscGithubAlt } from "react-icons/vsc";
-import { SiReact, SiOpensourceinitiative, SiNextdotjs } from "react-icons/si";
+import { SiReact, SiOpensourceinitiative, SiNextdotjs, SiTypescript } from "react-icons/si";
 
 import styles from "./Card.module.scss";
 import Image from "next/legacy/image";
@@ -14,6 +14,10 @@ const BannerIcons: BannerIconsTypes = {
   react: {
     icon: <SiReact size={15} fill="#000000" />,
     bg: "#86E1F9",
+  },
+  typescript: {
+    icon: <SiTypescript size={25} fill="#007acc" />,
+    bg: "#ffffff",
   },
   opensource: {
     icon: (

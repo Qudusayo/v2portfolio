@@ -2,6 +2,24 @@ import { ProjectTypes } from "@/types";
 
 const projects: ProjectTypes[] = [
   {
+    name: "Metaangels Clone",
+    previewLink: "https://marketplace.qudusayo.me/",
+    mainType: "react",
+    previewImg: "/projects-preview/metaangelsclone.png",
+    category: ["React", "Blockchain"],
+    description: "Meta Angels nft marketplace UI clone",
+    githubUrl: "https://github.com/Qudusayo/nft-marketplace",
+  },
+  {
+    name: "Portfolio",
+    mainType: "typescript",
+    previewLink: "https://qudusayo.me",
+    previewImg: "/projects-preview/portfolio.png",
+    category: ["Typescript", "NextJs"],
+    description: "My current portfolio website.",
+    githubUrl: "https://github.com/Qudusayo/v2portfolio",
+  },
+  {
     name: "Web3afrika",
     mainType: "react",
     previewLink: "https://web3afrika.com",
@@ -53,6 +71,14 @@ const projects: ProjectTypes[] = [
     category: ["NextJs", "Typescript"],
     description: "Exam practice application for students",
     githubUrl: "https://github.com/Qudusayo/pq-practice-app",
+  },
+  {
+    name: "GoFanClub Minter",
+    previewLink: "https://nfts.gofanclub.com/",
+    mainType: "react",
+    previewImg: "/projects-preview/gofanclubminter.png",
+    category: ["React", "Blockchain"],
+    description: "Onchain NFT minter through image upload",
   },
 ];
 
