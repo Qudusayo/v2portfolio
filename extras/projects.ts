@@ -42,7 +42,7 @@ const projects: ProjectTypes[] = [
     mainType: "react",
     previewImg: "/projects-preview/devfinder.png",
     category: ["React", "Typescript"],
-    description: "Github user profile summary",
+    description: "Github user profile summary check",
     githubUrl: "https://github.com/Qudusayo/github-user-search-app",
   },
   {
