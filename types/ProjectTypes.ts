@@ -1,8 +1,9 @@
 export interface ProjectTypes {
   name: string;
   mainType: string;
-  previewImg: string;
-  previewLink: string;
   category: string[];
+  previewImg: string;
+  githubUrl?: string;
+  previewLink: string;
   description: string;
 }

@@ -7,8 +7,8 @@ const projects: ProjectTypes[] = [
     previewLink: "https://web3afrika.com",
     previewImg: "/projects-preview/web3afrika.png",
     category: ["React", "OpenSource"],
-    description:
-      "Official Website for Web3Afrika whose aim is to Onboard, Educate & Support Web3 Builders, Foster & Build Web3 Tools & Public Goods",
+    description: "Official Website for Web3Afrika.",
+    githubUrl: "https://github.com/Web3Afrika/web3afrika.com-v2",
   },
   {
     name: "RionNigeria",
@@ -16,7 +16,7 @@ const projects: ProjectTypes[] = [
     mainType: "next",
     previewImg: "/projects-preview/rionnigeria.png",
     category: ["NextJs", "Typescript"],
-    description: "A Website for an Islamic organisation",
+    description: "RION Nigeria website redesign",
   },
   {
     name: "BuyMeCoffee",
@@ -24,8 +24,8 @@ const projects: ProjectTypes[] = [
     mainType: "react",
     previewImg: "/projects-preview/support.png",
     category: ["React", "Blockchain"],
-    description:
-      "A webpage which makes supporting me fun and easy on the polygon network",
+    description: "Blockchain buy me a coffee tipping page",
+    githubUrl: "https://github.com/qudusayo/buymecoffee",
   },
   {
     name: "web3Terms",
@@ -33,8 +33,8 @@ const projects: ProjectTypes[] = [
     mainType: "opensource",
     previewImg: "/projects-preview/web3terms.png",
     category: ["NodeJs", "OpenSource", "Blockchain"],
-    description:
-      "A Twitter bot explaining and simplifying web3 terms to everyone!",
+    description: "A Twitter bot explaining web3 terms to everyone!",
+    githubUrl: "https://github.com/olanetsoft/web3terms",
   },
   {
     name: "devFinder",
@@ -42,8 +42,8 @@ const projects: ProjectTypes[] = [
     mainType: "react",
     previewImg: "/projects-preview/devfinder.png",
     category: ["React", "Typescript"],
-    description:
-      "A webpage that use the GitHub users API to pull profile data and display it",
+    description: "Github user profile summary",
+    githubUrl: "https://github.com/Qudusayo/github-user-search-app",
   },
   {
     name: "Quiz",
@@ -51,8 +51,8 @@ const projects: ProjectTypes[] = [
     mainType: "next",
     previewImg: "/projects-preview/quiz.png",
     category: ["NextJs", "Typescript"],
-    description:
-      "A random quiz practice application for the students of the University of Ibadan",
+    description: "Exam practice application for students",
+    githubUrl: "https://github.com/Qudusayo/pq-practice-app",
   },
 ];
 

@@ -58,12 +58,14 @@ export default function Card({
   mainType,
   previewLink,
   description,
+  githubUrl,
 }: {
   alt: string;
   previewImg: string;
   mainType: keyof BannerIconsTypes;
   previewLink?: string;
   description: string;
+  githubUrl?: string;
 }) {
   return (
     <div className={styles.Card}>
@@ -99,14 +101,16 @@ export default function Card({
           >
             view-project
           </a>
-          <a
-            aria-label={alt + " github link"}
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <VscGithubAlt fill="#607B96" size={25} />
-          </a>
+          {githubUrl ? (
+            <a
+              aria-label={alt + " github link"}
+              href={githubUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <VscGithubAlt fill="#607B96" size={25} />
+            </a>
+          ) : null}
         </div>
       </div>
     </div>

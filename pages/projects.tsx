@@ -123,6 +123,7 @@ export default function Projects() {
                       mainType={project.mainType}
                       previewImg={project.previewImg}
                       description={project.description}
+                      githubUrl={project.githubUrl}
                     />
                   </div>
                 );
