@@ -1,4 +1,9 @@
-import { RiGithubFill, RiLinkedinFill, RiTwitterFill } from "react-icons/ri";
+import {
+  RiGithubFill,
+  RiLinkedinFill,
+  RiTwitterFill,
+  RiDribbbleFill,
+} from "react-icons/ri";
 
 import styles from "./Footer.module.scss";
 
@@ -35,8 +40,21 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          <span className={styles.githubUsername}>@qudusayo</span>
           <RiGithubFill fill="#607B96" size={25} />
+        </a>
+      </div>
+      <div>
+        <a
+          aria-label="Designed by Yanka Darelova"
+          href="https://dribbble.com/shots/18111356-Portfolio-Concept-V-2"
+          target="_blank"
+          rel="noreferrer"
+          title="Designed by Yanka Darelova"
+        >
+          <span className={styles.githubUsername}>
+            Designed by Yanka Darelova
+          </span>
+          <RiDribbbleFill fill="#607B96" size={25} />
         </a>
       </div>
     </footer>
