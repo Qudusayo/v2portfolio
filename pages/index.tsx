@@ -13,7 +13,7 @@ export default function Home() {
           <div>
             <span className={styles.hi}>Hi all. I am</span>
             <h1>Qudusayo</h1>
-            <h2>&gt; Front-end developer</h2>
+            <h2>&gt; Full-stack developer</h2>
           </div>
 
           <div>
