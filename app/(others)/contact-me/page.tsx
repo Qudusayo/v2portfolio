@@ -1,9 +1,11 @@
+"use client";
+
 import React, { useState } from "react";
 import axios from "axios";
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
 import { IoMail, IoCall, IoOpenOutline } from "react-icons/io5";
 
-import styles from "@/styles/Contact.module.scss";
+import styles from "./Contact.module.scss";
 import Head from "next/head";
 import Sidebar from "@/components/Sidebar/Sidebar";
 

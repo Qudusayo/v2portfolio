@@ -1,3 +1,5 @@
+"use client";
+
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
 import React, { useEffect, useState } from "react";
 import {
@@ -10,7 +12,7 @@ import {
   SiOpensourceinitiative,
 } from "react-icons/si";
 import Card from "@/components/Card/Card";
-import styles from "@/styles/Projects.module.scss";
+import styles from "./Projects.module.scss";
 
 import projects from "@/extras/projects";
 import Head from "next/head";

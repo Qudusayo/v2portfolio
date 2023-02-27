@@ -1,15 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./Navbar.module.scss";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const { route } = useRouter();
-  const [visibility, setVisibility] = useState(false);
+  const route = usePathname();
 
-  useEffect(() => {
-    setVisibility(false);
-  }, [route]);
+  const [visibility, setVisibility] = useState(false);
 
   return (
     <nav

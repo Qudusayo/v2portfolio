@@ -1,15 +1,17 @@
+"use client";
+
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
 import { useEffect, useState } from "react";
-import { IoCaretForward, IoMail, IoCall } from "react-icons/io5";
+import { IoMail, IoCall } from "react-icons/io5";
 import { RiTerminalBoxFill, RiGamepadFill, RiUser4Fill } from "react-icons/ri";
 
 import sidebarStyles from "@/components/Sidebar/Sidebar.module.scss";
 import { Dropdown } from "@/components/Dropdown/Dropdown";
 
-import styles from "@/styles/About.module.scss";
 import Head from "next/head";
 import useCollapse from "react-collapsed";
 import Sidebar from "@/components/Sidebar/Sidebar";
+import styles from "./About.module.scss";
 
 export default function About() {
   return (

@@ -1,13 +1,10 @@
-import Head from "next/head";
-import styles from "@/styles/Home.module.scss";
+"use client";
+
+import styles from "./Home.module.scss";
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Qudusayo - Home</title>
-        <meta name="description" content="Hello from Qudusayo" />
-      </Head>
       <main className={styles.main}>
         <div className={styles.mainInfo}>
           <div>

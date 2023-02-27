@@ -3,7 +3,7 @@ import styles from "./Sidebar.module.scss";
 
 import { IoCaretForward } from "react-icons/io5";
 import useCollapse from "react-collapsed";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar({
   contents,
@@ -20,7 +20,7 @@ export default function Sidebar({
   //   }
   // }, []);
 
-  const { route } = useRouter();
+  const route = usePathname();
 
   return (
     <div className={styles.SideBar}>
@@ -47,9 +47,19 @@ const Drawer = ({
   entries: Array<React.ReactElement>;
 }) => {
   const [isExpanded, setisExpanded] = useState<boolean>(false);
+  const [hasDisabledAnimation, setHasDisabledAnimation] =
+    useState<boolean>(true);
   const { getCollapseProps, getToggleProps } = useCollapse({
     isExpanded,
-    defaultExpanded: false,
+    hasDisabledAnimation,
+
+    onExpandStart() {
+      setHasDisabledAnimation(false);
+    },
+
+    onCollapseStart() {
+      setHasDisabledAnimation(false);
+    },
   });
 
   useEffect(() => {
