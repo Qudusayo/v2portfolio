@@ -1,5 +1,10 @@
 import { VscGithubAlt } from "react-icons/vsc";
-import { SiReact, SiOpensourceinitiative, SiNextdotjs, SiTypescript } from "react-icons/si";
+import {
+  SiReact,
+  SiOpensourceinitiative,
+  SiNextdotjs,
+  SiTypescript,
+} from "react-icons/si";
 
 import styles from "./Card.module.scss";
 import Image from "next/legacy/image";
@@ -73,26 +78,16 @@ export default function Card({
 }) {
   return (
     <div className={styles.Card}>
-      <div className={styles.CardBanner}>
-        <Image
-          src={previewImg}
-          width={200}
-          height={115}
-          placeholder="blur"
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(
-            shimmer(700, 475)
-          )}`}
-          layout="responsive"
-          objectFit="cover"
-          alt={alt}
-        />
-        <div
-          style={{ backgroundColor: BannerIcons[mainType].bg }}
-          className={styles.CardBannerIcon}
-        >
-          {BannerIcons[mainType].icon}
-        </div>
-      </div>
+      <Image
+        src={previewImg}
+        width={200}
+        height={130}
+        placeholder="blur"
+        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+        layout="responsive"
+        objectFit="cover"
+        alt={alt}
+      />
       <div className={styles.CardContent}>
         <p>{description}</p>
         <div className={styles.CardContentLinks}>

@@ -116,8 +116,8 @@ export default function Projects() {
                 return (
                   <div className={styles.ProjectPreviewsBlock}>
                     <div className={styles.ProjectPreviewsBlockHeader}>
-                      <span>Project {index + 1} </span>
-                      <span>{`// _${project.name}`}</span>
+                      <span>{`//`}</span>
+                      <span>{`_${project.name}`}</span>
                     </div>
                     <Card
                       alt={project.name}

@@ -10,6 +10,10 @@ export default function Navbar() {
 
   const [visibility, setVisibility] = useState(false);
 
+  useEffect(() => {
+    setVisibility(false);
+  }, [route]);
+
   return (
     <nav
       className={[styles.Navbar, visibility && styles.NavbarAvtive].join(" ")}
