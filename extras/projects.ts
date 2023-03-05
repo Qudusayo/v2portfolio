@@ -70,7 +70,7 @@ const projects: ProjectTypes[] = [
     previewImg: "/projects/web3terms.png",
     category: ["NodeJs", "OpenSource", "Blockchain"],
     description: "A Twitter bot explaining web3 terms to everyone!",
-    githubUrl: "https://github.com/olanetsoft/web3terms",
+    githubUrl: "https://github.com/Olanetsoft/web3terms/commits?author=Qudusayo",
   },
   {
     name: "devFinder",
