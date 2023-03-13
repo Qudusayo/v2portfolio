@@ -24,7 +24,7 @@ const projects: ProjectTypes[] = [
     mainType: "react",
     previewLink: "https://web3afrika.com",
     previewImg: "/projects/web3afrika.png",
-    category: ["React", "OpenSource"],
+    category: ["React", "Contribution"],
     description: "Official Website for Web3Afrika.",
     githubUrl: "https://github.com/Web3Afrika/web3afrika.com-v2",
   },
@@ -50,7 +50,7 @@ const projects: ProjectTypes[] = [
     previewLink: "https://www.articleideagenerator.com/",
     mainType: "react",
     previewImg: "/projects/articleideagenerator.png",
-    category: ["React", "Blockchain"],
+    category: ["React", "Contribution"],
     description: "An AI tool to generate article ideas",
     githubUrl: "https://github.com/Olanetsoft/article-idea-generator/pull/41",
   },
@@ -66,11 +66,12 @@ const projects: ProjectTypes[] = [
   {
     name: "web3Terms",
     previewLink: "https://github.com/Olanetsoft/web3terms",
-    mainType: "opensource",
+    mainType: "contribution",
     previewImg: "/projects/web3terms.png",
-    category: ["NodeJs", "OpenSource", "Blockchain"],
+    category: ["NodeJs", "Contribution", "Blockchain"],
     description: "A Twitter bot explaining web3 terms to everyone!",
-    githubUrl: "https://github.com/Olanetsoft/web3terms/commits?author=Qudusayo",
+    githubUrl:
+      "https://github.com/Olanetsoft/web3terms/commits?author=Qudusayo",
   },
   {
     name: "devFinder",

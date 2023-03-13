@@ -24,7 +24,7 @@ const BannerIcons: BannerIconsTypes = {
     icon: <SiTypescript size={25} fill="#007acc" />,
     bg: "#ffffff",
   },
-  opensource: {
+  contribution: {
     icon: (
       <SiOpensourceinitiative
         size={15}

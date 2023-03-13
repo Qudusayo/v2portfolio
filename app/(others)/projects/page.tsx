@@ -71,7 +71,7 @@ export default function Projects() {
                     },
                     {
                       icon: <SiOpensourceinitiative size={20} />,
-                      name: "OpenSource",
+                      name: "Contribution",
                     },
                     {
                       icon: <SiNextdotjs size={20} />,
