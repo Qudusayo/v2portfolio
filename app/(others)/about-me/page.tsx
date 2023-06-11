@@ -31,39 +31,47 @@ export default function About() {
                 </span>
                 <span className={styles.tr}>
                   <span className={styles.th}></span>
-                  <code>About me</code>
+                  <code>I&apos;m Ayoola Abdulqudus,</code>
                 </span>
                 <span className={styles.tr}>
                   <span className={styles.th}></span>
-                  <code>Lorem ipsum dolor sit amet </code>
+                  <code>a Frontend Developer. Right now </code>
                 </span>
                 <span className={styles.tr}>
                   <span className={styles.th}></span>
-                  <code>consectetur adipisicing elit.</code>
+                  <code>I&apos;m working as a Freelancer focused on </code>
                 </span>
                 <span className={styles.tr}>
                   <span className={styles.th}></span>
-                  <code>Labore incidunt minima omnis ea </code>
+                  <code>Frontend Development. I know my ways on </code>
                 </span>
                 <span className={styles.tr}>
                   <span className={styles.th}></span>
-                  <code>suscipit necessitatibus itaque!</code>
+                  <code>Back-end but what I really like doing </code>
                 </span>
                 <span className={styles.tr}>
                   <span className={styles.th}></span>
-                  <code>ipsam autem temporibus culpa</code>
+                  <code>the most is Front-end development. </code>
                 </span>
                 <span className={styles.tr}>
                   <span className={styles.th}></span>
-                  <code>oluptates quibusdam commodi,</code>
+                  <code>Currently, my main area of focus has been </code>
                 </span>
                 <span className={styles.tr}>
                   <span className={styles.th}></span>
-                  <code>laboriosam assumenda inventore</code>
+                  <code>NextJs for full stack development.</code>
                 </span>
                 <span className={styles.tr}>
                   <span className={styles.th}></span>
-                  <code> ipsa saepe excepturi dolorum </code>
+                  <code>Besides that, my skills include </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>HTML, CSS, Javascript, MongoDB, EVM </code>
+                </span>
+                <span className={styles.tr}>
+                  <span className={styles.th}></span>
+                  <code>and some basic back-end (Node). </code>
                 </span>
                 <span className={styles.tr}>
                   <span className={styles.th}></span>
