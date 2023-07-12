@@ -1,12 +1,4 @@
 import { VscGithubAlt } from "react-icons/vsc";
-import {
-  SiReact,
-  SiOpensourceinitiative,
-  SiNextdotjs,
-  SiTypescript,
-} from "react-icons/si";
-
-import styles from "./Card.module.scss";
 import Image from "next/legacy/image";
 interface BannerIconsTypes {
   [key: string]: {
@@ -14,33 +6,6 @@ interface BannerIconsTypes {
     bg: string;
   };
 }
-
-const BannerIcons: BannerIconsTypes = {
-  react: {
-    icon: <SiReact size={15} fill="#000000" />,
-    bg: "#86E1F9",
-  },
-  typescript: {
-    icon: <SiTypescript size={25} fill="#007acc" />,
-    bg: "#ffffff",
-  },
-  contribution: {
-    icon: (
-      <SiOpensourceinitiative
-        size={15}
-        fill="#69BE28"
-        stroke="#69BE28"
-        strokeWidth={0.75}
-        scale={2}
-      />
-    ),
-    bg: "#FFFFFF",
-  },
-  next: {
-    icon: <SiNextdotjs size={15} fill="#000000" />,
-    bg: "#FFFFFF",
-  },
-};
 
 const shimmer = (w: number, h: number) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -77,7 +42,7 @@ export default function Card({
   githubUrl?: string;
 }) {
   return (
-    <div className={styles.Card}>
+    <div className="border border-[#1e2d3d] rounded-md h-fit">
       <Image
         src={previewImg}
         width={200}
@@ -87,16 +52,17 @@ export default function Card({
         layout="responsive"
         objectFit="cover"
         alt={alt}
+        className="rounded-t-md"
       />
-      <div className={styles.CardContent}>
-        <p>{description}</p>
-        <div className={styles.CardContentLinks}>
+      <div className="p-4 pt-0">
+        <p className="text-textColor text-[.95em]">{description}</p>
+        <div className="flex items-center justify-between mt-6">
           <a
             href={previewLink}
             target="_blank"
             rel="noreferrer"
             aria-label={alt + " preview"}
-            className={styles.btn}
+            className="text-[.95em] bg-[#1c2b3a] text-white px-4 py-2 rounded-md"
           >
             view-project
           </a>

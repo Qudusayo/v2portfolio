@@ -11,9 +11,13 @@ module.exports = {
     extend: {},
     colors: {
       ...colors,
+      textColor: "#8CA5B5",
       borderColor: "#1e2d3d",
     },
     screens: {
+      lg: {
+        max: "1024px",
+      },
       md: {
         max: "700px",
       },

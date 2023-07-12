@@ -18,7 +18,7 @@ export default function BoxLayout({
       <section className="basis-1/4">{sideBar}</section>
       <section className="basis-3/4 box-border border-l border-l-borderColor flex flex-col">
         <div className="border-b border-b-borderColor md:hidden">
-          <div className="flex items-center w-fit p-2 border-r border-r-borderColor text-[#8CA5B5]">
+          <div className="flex items-center w-fit p-2 border-r border-r-borderColor text-textColor">
             <span className="mr-8">{navTitle}</span>{" "}
             <IoClose style={{ cursor: "pointer" }} onClick={resetEntries} />
           </div>

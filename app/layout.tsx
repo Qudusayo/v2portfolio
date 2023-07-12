@@ -2,9 +2,7 @@
 
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
-
-import styles from "./layout.module.scss";
+import Footer from "@/components/Footer/Footer"
 
 export default function RootLayout({
   children,
@@ -14,9 +12,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className={styles.MainLayout}>
+        <div className="flex flex-col h-full">
           <Navbar />
-          <section className={styles.MainLayoutSection}>{children}</section>
+          <section className=" flex-1 relative md:overflow-auto md:mt-14">
+            {children}
+          </section>
           <Footer />
         </div>
       </body>

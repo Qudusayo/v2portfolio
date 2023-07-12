@@ -12,7 +12,6 @@ import {
   SiOpensourceinitiative,
 } from "react-icons/si";
 import Card from "@/components/Card/Card";
-import styles from "./Projects.module.scss";
 
 import projects from "@/extras/projects";
 import Head from "next/head";
@@ -110,14 +109,14 @@ export default function Projects() {
           navTitle={filters.length ? filters.join("; ") : "Projects"}
           resetEntries={() => setFilters([])}
         >
-          <div className={styles.ProjectPreviews}>
+          <div className="grid grid-cols-3 gap-x-4 gap-y-12 w-full pt-6 px-8 pb-12 grid-rows-[mansory] box-border h-full overflow-y-scroll lg:grid-cols-2 md:block">
             {React.Children.toArray(
               filteredList.map((project, index) => {
                 return (
-                  <div className={styles.ProjectPreviewsBlock}>
-                    <div className={styles.ProjectPreviewsBlockHeader}>
-                      <span>{`//`}</span>
-                      <span>{`_${project.name}`}</span>
+                  <div>
+                    <div className=" mb-4 text-sm">
+                      <span className="text-[#5565e8]">{`//`}</span>
+                      <span className="text-textColor">{`_${project.name}`}</span>
                     </div>
                     <Card
                       alt={project.name}
