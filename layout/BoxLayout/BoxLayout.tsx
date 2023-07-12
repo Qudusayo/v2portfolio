@@ -1,4 +1,3 @@
-import styles from "./BoxLayout.module.scss";
 import { IoClose } from "react-icons/io5";
 
 interface BoxLayoutTypes {
@@ -15,16 +14,16 @@ export default function BoxLayout({
   resetEntries,
 }: BoxLayoutTypes) {
   return (
-    <div className={styles.BoxLayout}>
-      <section className={styles.BoxLayoutSideBar}>{sideBar}</section>
-      <section className={styles.BoxLayoutContent}>
-        <div className={styles.BoxLayoutContentNav}>
-          <div>
-            <span>{navTitle}</span>{" "}
+    <div className="absolute right-0 top-0 w-full h-full flex md:flex-col">
+      <section className="basis-1/4">{sideBar}</section>
+      <section className="basis-3/4 box-border border-l border-l-borderColor flex flex-col">
+        <div className="border-b border-b-borderColor md:hidden">
+          <div className="flex items-center w-fit p-2 border-r border-r-borderColor text-[#8CA5B5]">
+            <span className="mr-8">{navTitle}</span>{" "}
             <IoClose style={{ cursor: "pointer" }} onClick={resetEntries} />
           </div>
         </div>
-        <div className={styles.BoxLayoutContentChildren}>{children}</div>
+        <div className="flex-1 overflow-auto">{children}</div>
       </section>
     </div>
   );
