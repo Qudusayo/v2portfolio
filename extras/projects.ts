@@ -2,15 +2,6 @@ import { ProjectTypes } from "@/types";
 
 const projects: ProjectTypes[] = [
   {
-    name: "Metaangels Clone",
-    previewLink: "https://marketplace.qudusayo.me/",
-    mainType: "react",
-    previewImg: "/projects/metaangels.png",
-    category: ["React", "Blockchain"],
-    description: "Meta Angels nft marketplace UI clone",
-    githubUrl: "https://github.com/Qudusayo/nft-marketplace",
-  },
-  {
     name: "Portfolio",
     mainType: "typescript",
     previewLink: "https://qudusayo.me",
@@ -30,11 +21,20 @@ const projects: ProjectTypes[] = [
   },
   {
     name: "RionNigeria",
-    previewLink: "https://rionnigeria.vercel.app/",
+    previewLink: "https://rionnigeria.org/",
     mainType: "next",
     previewImg: "/projects/rionnigeria.png",
     category: ["NextJs", "Typescript"],
     description: "RION Nigeria website redesign",
+  },
+  {
+    name: "Metaangels Clone",
+    previewLink: "https://marketplace.qudusayo.me/",
+    mainType: "react",
+    previewImg: "/projects/metaangels.png",
+    category: ["React", "Blockchain"],
+    description: "Meta Angels nft marketplace UI clone",
+    githubUrl: "https://github.com/Qudusayo/nft-marketplace",
   },
   {
     name: "Revoke",
