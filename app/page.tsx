@@ -1,8 +1,10 @@
 "use client";
+import Head from "./head";
 
 export default function Home() {
   return (
     <>
+      <Head />
       <main
         style={{ backgroundImage: "url('/bg-blur.svg')" }}
         className="bg-right bg-no-repeat bg-contain h-full bg-[#011627] flex items-center md:h-[90.5%] md:mt-14"

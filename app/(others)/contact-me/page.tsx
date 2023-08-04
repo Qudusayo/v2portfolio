@@ -6,8 +6,8 @@ import BoxLayout from "@/layout/BoxLayout/BoxLayout";
 import { IoMail, IoCall, IoOpenOutline } from "react-icons/io5";
 
 import styles from "./Contact.module.scss";
-import Head from "next/head";
 import Sidebar from "@/components/Sidebar/Sidebar";
+import Head from "./head";
 
 export default function Contact() {
   let [day, mon, date] = Date().split(" ");
@@ -61,10 +61,7 @@ export default function Contact() {
 
   return (
     <>
-      <Head>
-        <title>Qudusayo - Contact</title>
-        <meta name="description" content="Send Qudusayo a message" />
-      </Head>
+      <Head />
       <div>
         <BoxLayout
           navTitle="contacts"

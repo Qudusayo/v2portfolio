@@ -8,18 +8,15 @@ import { RiTerminalBoxFill, RiGamepadFill, RiUser4Fill } from "react-icons/ri";
 import sidebarStyles from "@/components/Sidebar/Sidebar.module.scss";
 import { Dropdown } from "@/components/Dropdown/Dropdown";
 
-import Head from "next/head";
 import useCollapse from "react-collapsed";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import styles from "./About.module.scss";
+import Head from "./head";
 
 export default function About() {
   return (
     <>
-      <Head>
-        <title>Qudusayo - About</title>
-        <meta name="description" content="About Qudusayo" />
-      </Head>
+      <Head />
       <div>
         <BoxLayout sideBar={<FlexSideBar />} navTitle="personal-info">
           <div className={styles.About}>

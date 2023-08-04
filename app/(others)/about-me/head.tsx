@@ -7,7 +7,7 @@ export default function Head() {
       <title>About - Qudusayo</title>
       <meta
         name="description"
-        content="Hello there, I'm Qudusayo. I'm a full-stack developer."
+        content="Hi all. I am Qudusayo, a front-end developer. I am proficient in JavaScript and TypeScript. I have experience working with React, Next.js, Node.js.  I am open to learning new technologies and working on new projects."
       />
     </>
   );

@@ -14,9 +14,9 @@ import {
 import Card from "@/components/Card/Card";
 
 import projects from "@/extras/projects";
-import Head from "next/head";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import { ProjectTypes } from "@/types";
+import Head from "./head";
 
 export default function Projects() {
   const [filters, setFilters] = useState<string[]>([]);
@@ -48,10 +48,7 @@ export default function Projects() {
 
   return (
     <>
-      <Head>
-        <title>Qudusayo - Projects</title>
-        <meta name="description" content="Works from Qudusayo" />
-      </Head>
+      <Head />
       <div>
         <BoxLayout
           sideBar={

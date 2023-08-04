@@ -5,10 +5,7 @@ export default function Head() {
     <>
       <DefaultTags />
       <title>Contact - Qudusayo</title>
-      <meta
-        name="description"
-        content="Say hello to me. I'm a full-stack developer."
-      />
+      <meta name="description" content="Send Qudusayo a message" />
     </>
   );
 }
