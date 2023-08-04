@@ -13,10 +13,10 @@ import {
 } from "react-icons/si";
 import Card from "@/components/Card/Card";
 
-import projects from "@/extras/projects";
+import projects from "@/app/(others)/projects/projects";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import { ProjectTypes } from "@/types";
-import Head from "./head";
+import Head from "@/extras/head";
 
 export default function Projects() {
   const [filters, setFilters] = useState<string[]>([]);
@@ -48,7 +48,13 @@ export default function Projects() {
 
   return (
     <>
-      <Head />
+      <Head>
+        <title>Qudusayo - Projects</title>
+        <meta
+          name="description"
+          content="Check out what I've been working on."
+        />
+      </Head>
       <div>
         <BoxLayout
           sideBar={

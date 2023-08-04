@@ -11,12 +11,18 @@ import { Dropdown } from "@/components/Dropdown/Dropdown";
 import useCollapse from "react-collapsed";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import styles from "./About.module.scss";
-import Head from "./head";
+import Head from "@/extras/head";
 
 export default function About() {
   return (
     <>
-      <Head />
+      <Head>
+        <title>About - Qudusayo</title>
+        <meta
+          name="description"
+          content="Hi all. I am Qudusayo, a front-end developer. I am proficient in JavaScript and TypeScript. I have experience working with React, Next.js, Node.js.  I am open to learning new technologies and working on new projects."
+        />
+      </Head>
       <div>
         <BoxLayout sideBar={<FlexSideBar />} navTitle="personal-info">
           <div className={styles.About}>

@@ -1,10 +1,16 @@
 "use client";
-import Head from "./head";
+import Head from "../extras/head";
 
 export default function Home() {
   return (
     <>
-      <Head />
+      <Head>
+        <title>Qudusayo</title>
+        <meta
+          name="description"
+          content="Hello there, I'm Qudusayo. I'm a full-stack developer."
+        />
+      </Head>
       <main
         style={{ backgroundImage: "url('/bg-blur.svg')" }}
         className="bg-right bg-no-repeat bg-contain h-full bg-[#011627] flex items-center md:h-[90.5%] md:mt-14"
