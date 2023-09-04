@@ -11,6 +11,14 @@ const projects: ProjectTypes[] = [
     githubUrl: "https://github.com/Qudusayo/v2portfolio",
   },
   {
+    name: "Solvre",
+    mainType: "next",
+    previewLink: "https://solvre.pro",
+    previewImg: "/projects/solvre.png",
+    category: ["NextJs", "Typescript"],
+    description: "Task Delegation platform.",
+  },
+  {
     name: "Web3afrika",
     mainType: "react",
     previewLink: "https://web3afrika.com",
@@ -33,7 +41,7 @@ const projects: ProjectTypes[] = [
     mainType: "react",
     previewImg: "/projects/metaangels.png",
     category: ["React", "Blockchain"],
-    description: "Meta Angels nft marketplace UI clone",
+    description: "Meta Angels marketplace UI clone",
     githubUrl: "https://github.com/Qudusayo/nft-marketplace",
   },
   {
@@ -42,7 +50,7 @@ const projects: ProjectTypes[] = [
     mainType: "next",
     previewImg: "/projects/revoke.png",
     category: ["Next", "Blockchain", "Typescript"],
-    description: "Review and revoke your token approvals.",
+    description: "Token approvals revoke.",
     githubUrl: "https://github.com/Qudusayo/revoke",
   },
   {
@@ -51,7 +59,7 @@ const projects: ProjectTypes[] = [
     mainType: "react",
     previewImg: "/projects/articleideagenerator.png",
     category: ["React", "Contribution"],
-    description: "An AI tool to generate article ideas",
+    description: "AI tool to generate article ideas",
     githubUrl: "https://github.com/Olanetsoft/article-idea-generator/pull/41",
   },
   {
@@ -60,7 +68,7 @@ const projects: ProjectTypes[] = [
     mainType: "react",
     previewImg: "/projects/buymeacoffee.png",
     category: ["React", "Blockchain"],
-    description: "Blockchain buy me a coffee tipping page",
+    description: "Onchain based tipping platform",
     githubUrl: "https://github.com/qudusayo/buymecoffee",
   },
   {
@@ -69,7 +77,7 @@ const projects: ProjectTypes[] = [
     mainType: "contribution",
     previewImg: "/projects/web3terms.png",
     category: ["NodeJs", "Contribution", "Blockchain"],
-    description: "A Twitter bot explaining web3 terms to everyone!",
+    description: "web3 twitter bot!",
     githubUrl:
       "https://github.com/Olanetsoft/web3terms/commits?author=Qudusayo",
   },
@@ -88,7 +96,7 @@ const projects: ProjectTypes[] = [
     mainType: "next",
     previewImg: "/projects/gesquiz.png",
     category: ["NextJs", "Typescript"],
-    description: "Exam practice application for students",
+    description: "Exam practice application",
     githubUrl: "https://github.com/Qudusayo/pq-practice-app",
   },
   {
@@ -97,7 +105,7 @@ const projects: ProjectTypes[] = [
     mainType: "react",
     previewImg: "/projects/nftgofanclub.png",
     category: ["React", "Blockchain"],
-    description: "Onchain NFT minter through image upload",
+    description: "NFT minter",
   },
 ];
 

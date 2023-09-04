@@ -1,7 +1,7 @@
 "use client";
 
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Children } from "react";
 import {
   SiNextdotjs,
   SiTypescript,
@@ -112,11 +112,11 @@ export default function Projects() {
           navTitle={filters.length ? filters.join("; ") : "Projects"}
           resetEntries={() => setFilters([])}
         >
-          <div className="grid grid-cols-3 gap-x-4 gap-y-12 w-full pt-6 px-8 pb-12 grid-rows-[mansory] box-border h-full overflow-y-scroll lg:grid-cols-2 md:block">
-            {React.Children.toArray(
-              filteredList.map((project, index) => {
+          <div className="grid grid-cols-3 gap-x-4 gap-y-12 w-full pt-6 px-8 pb-12 grid-rows-[mansory] box-border overflow-y-scroll lg:grid-cols-2 md:block">
+            {Children.toArray(
+              filteredList.map((project) => {
                 return (
-                  <div>
+                  <div className="box-content h-full flex flex-col">
                     <div className=" mb-4 text-sm">
                       <span className="text-[#5565e8]">{`//`}</span>
                       <span className="text-textColor">{`_${project.name}`}</span>

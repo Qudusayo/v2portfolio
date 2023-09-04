@@ -42,7 +42,7 @@ export default function Card({
   githubUrl?: string;
 }) {
   return (
-    <div className="border border-[#1e2d3d] rounded-md h-fit">
+    <div className="border border-[#1e2d3d] rounded-md flex-grow">
       <Image
         src={previewImg}
         width={200}
