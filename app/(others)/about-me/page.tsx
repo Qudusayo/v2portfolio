@@ -1,17 +1,13 @@
 "use client";
 
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
-import { useEffect, useState } from "react";
 import { IoMail, IoCall } from "react-icons/io5";
 import { RiTerminalBoxFill, RiGamepadFill, RiUser4Fill } from "react-icons/ri";
-
-import sidebarStyles from "@/components/Sidebar/Sidebar.module.scss";
+import { IconContext } from "react-icons";
 import { Dropdown } from "@/components/Dropdown/Dropdown";
-
-import useCollapse from "react-collapsed";
 import Sidebar from "@/components/Sidebar/Sidebar";
-import styles from "./About.module.scss";
 import Head from "@/extras/head";
+import LineNumberEditor from "@/components/LineNumberEditor";
 
 export default function About() {
   return (
@@ -25,65 +21,7 @@ export default function About() {
       </Head>
       <div>
         <BoxLayout sideBar={<FlexSideBar />} navTitle="personal-info">
-          <div className={styles.About}>
-            <div className={styles.AboutInfo}>
-              <pre className={styles.code}>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>{"/**"}</code>
-                </span>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>I&apos;m Ayoola Abdulqudus,</code>
-                </span>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>a Frontend Developer. Right now </code>
-                </span>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>I&apos;m working as a Freelancer focused on </code>
-                </span>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>Frontend Development. I know my ways on </code>
-                </span>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>Back-end but what I really like doing </code>
-                </span>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>the most is Front-end development. </code>
-                </span>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>Currently, my main area of focus has been </code>
-                </span>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>NextJs for full stack development.</code>
-                </span>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>Besides that, my skills include </code>
-                </span>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>HTML, CSS, Javascript, MongoDB, EVM </code>
-                </span>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>and some basic back-end (Node). </code>
-                </span>
-                <span className={styles.tr}>
-                  <span className={styles.th}></span>
-                  <code>*/</code>
-                </span>
-              </pre>
-            </div>
-            <div className={styles.AboutCodePreview}></div>
-          </div>
+          <LineNumberEditor />
         </BoxLayout>
       </div>
     </>
@@ -91,27 +29,16 @@ export default function About() {
 }
 
 const FlexSideBar = () => {
-  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
-  const [firstDrawerOpen, setFirstDrawerOpen] = useState(true);
-  const [secondDrawerOpen, setSecondDrawerOpen] = useState(true);
-
-  useEffect(() => {
-    if (window.innerWidth <= 700) {
-      setFirstDrawerOpen(false);
-      setSecondDrawerOpen(false);
-    }
-  }, []);
-
   return (
-    <div
-      className={[sidebarStyles.SideBar, sidebarStyles.SideBarFlex].join(" ")}
-    >
-      <div className={sidebarStyles.SideBarFlexLeft}>
-        <RiTerminalBoxFill fill="#607B96" size={20} />
-        <RiGamepadFill fill="#607B96" size={20} />
-        <RiUser4Fill fill="#607B96" size={20} />
+    <div className="flex h-full">
+      <div className="flex-col items-center gap-6 pt-6 md:w-20 w-full md:flex hidden">
+        <IconContext.Provider value={{ color: "#607B96", size: "24" }}>
+          <RiTerminalBoxFill />
+          <RiUser4Fill fill="#FFF" />
+          <RiGamepadFill />
+        </IconContext.Provider>
       </div>
-      <div className={sidebarStyles.SideBarFlexRight}>
+      <div className="flex-1 md:border-l border-theme-stroke border-l-0">
         <Sidebar
           contents={[
             {
@@ -141,13 +68,25 @@ const FlexSideBar = () => {
             {
               title: "contacts",
               content: [
-                <a key={0} href="mailto:qqudusayo@gmail.com">
-                  <IoMail fill="#607b96" />
-                  <span>qqudusayo@gmail.com</span>
+                <a
+                  key={0}
+                  className="flex items-center gap-2 text-foreground py-2 px-2"
+                  href="mailto:qqudusayo@gmail.com"
+                >
+                  <IconContext.Provider value={{ color: "#607b96" }}>
+                    <IoMail />
+                  </IconContext.Provider>
+                  <span className="text-[#607b96]">qqudusayo@gmail.com</span>
                 </a>,
-                <a key={1} href="tel:+2347016412041">
-                  <IoCall fill="#607b96" />
-                  <span>+(234)701-6412-041</span>
+                <a
+                  key={1}
+                  className="flex items-center gap-2 text-foreground py-2 px-2"
+                  href="tel:+2347016412041"
+                >
+                  <IconContext.Provider value={{ color: "#607b96" }}>
+                    <IoCall />
+                  </IconContext.Provider>
+                  <span className="text-[#607b96]">+(234)701-6412-041</span>
                 </a>,
               ],
             },

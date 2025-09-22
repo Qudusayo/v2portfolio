@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./Navbar.module.scss";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const route = usePathname();
@@ -15,9 +16,7 @@ export default function Navbar() {
   }, [route]);
 
   return (
-    <nav
-      className={[styles.Navbar, visibility && styles.NavbarAvtive].join(" ")}
-    >
+    <nav className={cn(styles.Navbar, visibility && styles.NavbarAvtive)}>
       <div>
         <Link href={"/"}>Qudusayo</Link>
         <div className={styles.hamburger}>

@@ -3,9 +3,10 @@ import {
   RiArrowRightSLine,
   RiMarkdownFill,
 } from "react-icons/ri";
-import useCollapse from "react-collapsed";
+import { useCollapse } from "react-collapsed";
 
 import styles from "./Dropdown.module.scss";
+import { cn } from "@/lib/utils";
 
 export const Dropdown = ({
   title,
@@ -21,7 +22,9 @@ export const Dropdown = ({
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
 
   return (
-    <div className={styles.Dropdown}>
+    <div
+      className={cn("py-2 px-2 text-foreground", isExpanded && "text-white")}
+    >
       <nav className={styles.DropdownNav} {...getToggleProps()}>
         <RiArrowRightSLine
           className={
@@ -30,16 +33,16 @@ export const Dropdown = ({
               : styles.DropdownNavTitleInactive
           }
         />
-        <div className={styles.DropdownNavTitle}>
+        <div className="flex items-center gap-2">
           <RiFolder3Fill fill={folderFill} />
           <span className={isActive ? styles.active : ""}>{title}</span>
         </div>
       </nav>
       {entries?.length ? (
-        <div className={styles.DropdownEntries} {...getCollapseProps()}>
-          <ul>
+        <div className="w-full m-0 p-0" {...getCollapseProps()}>
+          <ul className="pl-6">
             {entries?.map((entry) => (
-              <li key={entry}>
+              <li key={entry} className="flex items-center gap-2 p-0 pt-2 text-foreground">
                 <RiMarkdownFill /> <span>{entry}</span>
               </li>
             ))}

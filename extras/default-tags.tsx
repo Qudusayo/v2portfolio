@@ -25,10 +25,7 @@ export default function DefaultTags() {
         name="twitter:description"
         content="Hello there, I'm Qudusayo. I'm a full-stack developer."
       />
-      <meta
-        name="twitter:image:src"
-        content="/android-chrome-512x512.png"
-      />
+      <meta name="twitter:image:src" content="/android-chrome-512x512.png" />
       <meta name="twitter:image:alt" content="Check what Qudusayo is doing" />
       <meta name="twitter:creator" content="@qudusayo" />
       <meta name="twitter:site" content="@qudusayo" />

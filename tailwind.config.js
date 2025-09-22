@@ -12,15 +12,11 @@ module.exports = {
     colors: {
       ...colors,
       textColor: "#8CA5B5",
-      borderColor: "#1e2d3d",
-    },
-    screens: {
-      lg: {
-        max: "1024px",
-      },
-      md: {
-        max: "700px",
-      },
+      borderColor: "#314158",
+      "theme-backdrop": "#020618",
+      "theme-stroke": "#314158",
+      "theme-background": "#0F172B",
+      foreground: "#90A1B9",
     },
   },
   plugins: [],

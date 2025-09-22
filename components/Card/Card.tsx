@@ -11,12 +11,12 @@ const shimmer = (w: number, h: number) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient id="g">
-      <stop stop-color="#1E2D3D" offset="20%" />
+      <stop stop-color="#314158" offset="20%" />
       <stop stop-color="#607B96" offset="50%" />
-      <stop stop-color="#1E2D3D" offset="70%" />
+      <stop stop-color="#314158" offset="70%" />
     </linearGradient>
   </defs>
-  <rect width="${w}" height="${h}" fill="#1E2D3D" />
+  <rect width="${w}" height="${h}" fill="#314158" />
   <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
   <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
 </svg>`;
@@ -42,11 +42,11 @@ export default function Card({
   githubUrl?: string;
 }) {
   return (
-    <div className="border border-[#1e2d3d] rounded-md flex-grow">
+    <div className="border border-[#314158] rounded-md flex-grow">
       <Image
         src={previewImg}
         width={200}
-        height={130}
+        height={133}
         placeholder="blur"
         blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
         layout="responsive"
