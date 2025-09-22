@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import styles from "./Sidebar.module.scss";
+"use client";
 
+import React, { useEffect, useMemo, useState } from "react";
 import { IoCaretForward } from "react-icons/io5";
-import useCollapse from "react-collapsed";
+import { useCollapse } from "react-collapsed";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export default function Sidebar({
   contents,
@@ -13,21 +14,15 @@ export default function Sidebar({
     content: Array<React.ReactElement>;
   }[];
 }) {
-  // useEffect(() => {
-  //   if (window.innerWidth <= 700) {
-  //     setFirstDrawerOpen(false);
-  //     setSecondDrawerOpen(false);
-  //   }
-  // }, []);
-
   const route = usePathname();
 
   return (
-    <div className={styles.SideBar}>
-      <div className={styles.SideBarMobileTitle}>{"_" + route.slice(1)}</div>
+    <div className="h-full">
+      <div className="text-white py-6 px-4 hidden">{"_" + route.slice(1)}</div>
       {contents?.map((content, index) => (
         <Drawer
-          isFirstDrawer={contents.length > 1 && index === 0}
+          isFirstDrawer={index === 0}
+          isLastDrawer={index === contents.length - 1}
           key={index}
           title={content.title}
           entries={content.content}
@@ -41,54 +36,59 @@ const Drawer = ({
   title,
   entries,
   isFirstDrawer = false,
+  isLastDrawer = false,
 }: {
   title: string;
   isFirstDrawer?: boolean;
+  isLastDrawer?: boolean;
   entries: Array<React.ReactElement>;
 }) => {
-  const [isExpanded, setisExpanded] = useState<boolean>(false);
-  const [hasDisabledAnimation, setHasDisabledAnimation] =
-    useState<boolean>(true);
-  const { getCollapseProps, getToggleProps } = useCollapse({
-    isExpanded,
-    hasDisabledAnimation,
-
-    onExpandStart() {
-      setHasDisabledAnimation(false);
-    },
-
-    onCollapseStart() {
-      setHasDisabledAnimation(false);
-    },
-  });
+  const initialExpanded = useMemo(() => {
+    if (typeof window === "undefined") return true;
+    return window.innerWidth >= 768;
+  }, []);
+  const [isExpanded, setIsExpanded] = useState(initialExpanded);
 
   useEffect(() => {
-    if (window.innerWidth > 700) {
-      setisExpanded(true);
-    }
+    const handleResize = () => {
+      const shouldExpand = window.innerWidth >= 768;
+      setIsExpanded((current) => (current === shouldExpand ? current : shouldExpand));
+    };
+    // Sync once on mount in case of hydration mismatch
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const { getCollapseProps, getToggleProps } = useCollapse({
+    isExpanded,
+    defaultExpanded: initialExpanded,
+  });
+
   return (
-    <nav
-      className={[
-        styles.SideBarDropdown,
-        !isExpanded && isFirstDrawer && styles.firstDrawerOpen,
-      ].join(" ")}
-    >
+    <nav className={cn("mb-0", !isExpanded && isFirstDrawer && "border-b-0")}>
       <div
-        className={styles.SideBarDropdownHeader}
-        {...getToggleProps({ onClick: () => setisExpanded((x) => !x) })}
+        className={cn(
+          "border border-[#314158] border-x-0 py-2 px-4 flex items-center gap-2 cursor-pointer text-foreground",
+          isExpanded && "text-white",
+          isFirstDrawer && "border-t-0",
+          !isExpanded && !isLastDrawer && "border-b-0"
+        )}
+        {...getToggleProps({ onClick: () => setIsExpanded((x) => !x) })}
       >
         <IoCaretForward
-          className={
-            isExpanded ? styles.DrawerControlOpen : styles.DrawerControlClose
-          }
-        />{" "}
+          className={cn(
+            "transition-all duration-200",
+            isExpanded ? "rotate-90" : "rotate-0"
+          )}
+        />
         <span>{title}</span>
       </div>
-      <ul className={styles.SideBarDropdownContent} {...getCollapseProps()}>
+      <ul className="p-2" {...getCollapseProps()}>
         {entries.map((entry, index) => (
-          <li key={index}>{entry}</li>
+          <li key={index} className="block">
+            {entry}
+          </li>
         ))}
       </ul>
     </nav>

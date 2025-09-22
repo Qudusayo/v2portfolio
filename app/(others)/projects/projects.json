@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Solvre",
+    "mainType": "next",
+    "previewLink": "https://solvre.pro",
+    "previewImg": "/projects/solvre.png",
+    "category": ["NextJs", "Typescript"],
+    "description": "Task Delegation platform."
+  },
+  {
+    "name": "Web3afrika",
+    "mainType": "react",
+    "previewLink": "https://web3afrika.com",
+    "previewImg": "/projects/web3afrika.png",
+    "category": ["React", "Contribution"],
+    "description": "Official Website for Web3Afrika.",
+    "githubUrl": "https://github.com/Web3Afrika/web3afrika.com-v2"
+  },
+  {
+    "name": "RionNigeria",
+    "previewLink": "https://rionnigeria.org/",
+    "mainType": "next",
+    "previewImg": "/projects/rionnigeria.png",
+    "category": ["NextJs", "Typescript"],
+    "description": "RION Nigeria website redesign"
+  }
+]

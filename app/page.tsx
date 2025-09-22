@@ -13,9 +13,9 @@ export default function Home() {
       </Head>
       <main
         style={{ backgroundImage: "url('/bg-blur.svg')" }}
-        className="bg-right bg-no-repeat bg-contain h-full bg-[#011627] flex items-center md:h-[90.5%] md:mt-14"
+        className="bg-right bg-no-repeat bg-contain h-full bg-theme-background flex items-center md:h-[90.5%] md:mt-14 mt-0"
       >
-        <div className="m-auto w-3/4 md:w-11/12">
+        <div className="m-auto md:w-3/4 w-11/12">
           <div className="text-[#e5e9f0]">
             <span className="md:text-sm">Hi all. I am</span>
             <h1 className=" text-[4em] my-0.5 -mt-1.5">Qudusayo</h1>

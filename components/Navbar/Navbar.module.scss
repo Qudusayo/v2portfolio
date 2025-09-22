@@ -1,8 +1,7 @@
 .Navbar {
   display: flex;
-  border-bottom: 1px solid #1e2d3d;
-  color: #8CA5B5;
-  background-color: #011627;
+  border-bottom: 1px solid #314158;
+  color: #8ca5b5;
 
   &Links {
     display: flex;
@@ -10,10 +9,10 @@
 
     li {
       padding-inline-start: 0;
-      border-left: 1px solid #1e2d3d;
+      border-left: 1px solid #314158;
 
       &:nth-last-of-type(2) {
-        border-right: 1px solid #1e2d3d;
+        border-right: 1px solid #314158;
       }
 
       &:nth-of-type(1) {
@@ -24,7 +23,7 @@
         margin-left: auto;
       }
 
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 769px) {
         &:nth-last-of-type(2) {
           border-right: none;
         }
@@ -60,7 +59,7 @@
 
     &:nth-last-of-type(1) {
       padding: 0;
-      border-left: 1px solid #1e2d3d;
+      border-left: 1px solid #314158;
       text-align: center;
     }
 
@@ -72,7 +71,7 @@
       border: none;
       width: fit-content;
 
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 769px) {
         display: block;
         right: 0;
         border: none !important;
@@ -84,10 +83,10 @@
       }
 
       &_bars {
-        height: 3px;
-        width: 30px;
+        height: 2px;
+        width: 25px;
         display: inline-block;
-        background-color: #8CA5B5;
+        background-color: #8ca5b5;
         margin: 2.5px 0;
         cursor: pointer;
         transition: all 0.3s linear;
@@ -101,14 +100,14 @@
       &_bars_active:nth-of-type(1) {
         transform: rotate(135deg);
         position: relative;
-        top: 0.5em;
+        top: 0.425em;
       }
 
       // &_bars_active:nth-of-type(1),
       &_bars_active:nth-of-type(3) {
         transform: rotate(45deg);
         position: relative;
-        top: -0.5em;
+        top: -0.4em;
       }
 
       &_check {
@@ -136,22 +135,24 @@
       border-bottom: 3px solid #fea55f;
       bottom: -1px;
 
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 769px) {
         border-bottom: none;
       }
     }
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 769px) {
+    overflow: hidden;
     flex-direction: column;
     width: 100%;
-    background-color: #011627;
-    top: 0;
     z-index: 100;
-    position: fixed;
-    overflow-y: scroll;
+    position: absolute;
     border-bottom: none;
+    left: 0;
+    transition: all 0.3s linear;
     // min-height: 100%;
+    height: 57px;
+    @apply bg-theme-background;
 
     &Avtive {
       height: 100%;
@@ -159,7 +160,7 @@
 
     div:nth-of-type(1) {
       flex: none;
-      border-bottom: 1px solid #1e2d3d;
+      border-bottom: 1px solid #314158;
     }
 
     div:nth-of-type(2) {
@@ -172,20 +173,20 @@
         height: max-content;
         overflow-y: auto;
 
-        &.visibleNav {
-          display: block;
-          top: 0;
-        }
+        // &.visibleNav {
+        //   display: block;
+        //   top: 0;
+        // }
 
-        &.inVisibleNav {
-          display: none;
-        }
+        // &.inVisibleNav {
+        //   display: none;
+        // }
 
         li {
           width: 100%;
           text-align: left;
           border-left: none;
-          border-bottom: 1px solid #1e2d3d;
+          border-bottom: 1px solid #314158;
 
           a {
             display: block;

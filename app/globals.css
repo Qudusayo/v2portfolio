@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+input:checked + div {
+  @apply border-foreground;
+  @apply bg-foreground;
+}
+
+input:checked + div svg {
+  @apply block;
+}
+
 * {
   font-family: "Fira Code", monospace;
   box-sizing: border-box;
@@ -18,7 +27,15 @@ body {
 }
 
 body {
-  background: #011627;
+  @apply bg-theme-backdrop;
+  @apply p-12;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 769px) {
+  body {
+    @apply p-3;
+  }
 }
 
 img {

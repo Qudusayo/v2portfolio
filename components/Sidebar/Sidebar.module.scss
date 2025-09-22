@@ -9,14 +9,14 @@
     // top: 0;
     // background-color: #011627;
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 769px) {
       display: block;
     }
   }
 
   &Dropdown {
     &Header {
-      border: 1px solid #1e2d3d;
+      border: 1px solid #314158;
       border-left: none;
       border-right: none;
       padding: 0.5em 1em;
@@ -117,10 +117,10 @@
       }
     }
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 769px) {
       margin-bottom: 0.15em;
       &Header {
-        background-color: #1e2d3d;
+        background-color: #314158;
       }
     }
   }
@@ -143,16 +143,16 @@
       padding-top: 1.5em;
       min-width: 45px;
 
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 769px) {
         display: none;
       }
     }
 
     &Right {
       flex: 5;
-      border-left: 1px solid #1e2d3d;
+      border-left: 1px solid #314158;
 
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 769px) {
         border: none;
       }
     }

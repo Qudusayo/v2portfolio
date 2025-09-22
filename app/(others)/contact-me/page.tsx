@@ -74,11 +74,19 @@ export default function Contact() {
                 {
                   title: "contacts",
                   content: [
-                    <a key={0} href="mailto:qqudusayo@gmail.com">
+                    <a
+                      key={0}
+                      className="flex items-center gap-2 text-foreground p-2"
+                      href="mailto:qqudusayo@gmail.com"
+                    >
                       <IoMail fill="#607b96" />
                       <span>qqudusayo@gmail.com</span>
                     </a>,
-                    <a key={1} href="tel:+2347016412041">
+                    <a
+                      key={1}
+                      className="flex items-center gap-2 text-foreground p-2"
+                      href="tel:+2347016412041"
+                    >
                       <IoCall fill="#607b96" />
                       <span>+(234)701-6412-041</span>
                     </a>,
@@ -89,6 +97,7 @@ export default function Contact() {
                   content: [
                     <a
                       key={0}
+                      className="flex items-center gap-3 text-foreground p-2"
                       href="http://discordapp.com/users/712416046317043762"
                       target="_blank"
                       rel="noreferrer"
@@ -98,6 +107,7 @@ export default function Contact() {
                     </a>,
                     <a
                       key={1}
+                      className="flex items-center gap-3 text-foreground p-2"
                       href="https://stackoverflow.com/users/11659301/qudusayo"
                       target="_blank"
                       rel="noreferrer"
@@ -144,6 +154,7 @@ export default function Contact() {
                       name="message"
                       value={formEntries.message}
                       onChange={formEntriesHandler}
+                      className="resize-none"
                     ></textarea>
                   </div>
                   <button>submit-message</button>
@@ -164,7 +175,7 @@ export default function Contact() {
                 <button onClick={resetFormEntries}>send-new-message</button>
               </div>
             </section>
-            <section>
+            <section className="py-2">
               <pre className={styles.code}>
                 <span className={styles.tr}>
                   <span className={styles.th}></span>
@@ -258,6 +269,9 @@ export default function Contact() {
                   </code>
                 </span>
               </pre>
+            </section>
+            <section className="border-none !w-8 flex-none !py-2 !hidden md:!block">
+              <div className="h-1.5 w-4/5 mx-auto bg-foreground"></div>
             </section>
           </div>
         </BoxLayout>
