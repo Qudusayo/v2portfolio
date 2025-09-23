@@ -26,7 +26,6 @@
     "typescript": "4.9.4"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.12",
     "@tailwindcss/postcss": "^4.1.13",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
