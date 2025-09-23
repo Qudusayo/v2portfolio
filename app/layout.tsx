@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import Script from "next/script";
 import Head from "next/head";
-import WorkInProgressCover from "@/components/cover";
 
 export default function RootLayout({
   children,
@@ -22,7 +21,6 @@ export default function RootLayout({
       </Head>
 
       <body>
-        <WorkInProgressCover />
         <div
           id="soltip-widget"
           owner-data="EFzmBNRFz8cDpUrN8vMjh7jQexiWQr5E7LTzH9vokLMN"
