@@ -81,7 +81,7 @@ export default function Projects() {
                     <div key={index}>
                       <label
                         htmlFor={`entry1${index}`}
-                        className="select-none cursor-pointer flex items-center gap-2 text-foreground p-2"
+                        className="select-none cursor-pointer flex items-center gap-4 text-foreground p-2"
                       >
                         <input
                           type="checkbox"
@@ -108,8 +108,10 @@ export default function Projects() {
                             </g>
                           </svg>
                         </div>
-                        {stack.icon}
-                        <span>{stack.name}</span>
+                        <div className="flex items-center gap-2">
+                          {stack.icon}
+                          <span className="text-white">{stack.name}</span>
+                        </div>
                       </label>
                     </div>
                   )),
