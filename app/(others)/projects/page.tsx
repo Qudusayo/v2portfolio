@@ -2,15 +2,8 @@
 
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
 import React, { useEffect, useState, Children } from "react";
-import {
-  SiNextdotjs,
-  SiTypescript,
-  SiReact,
-  SiHtml5,
-  SiEthereum,
-  SiNodedotjs,
-  SiOpensourceinitiative,
-} from "react-icons/si";
+import { SiNextdotjs, SiTypescript, SiReact, SiEthereum } from "react-icons/si";
+import { RiRobot2Fill } from "react-icons/ri";
 import Card from "@/components/Card/Card";
 
 import projects from "@/app/(others)/projects/projects";
@@ -64,32 +57,25 @@ export default function Projects() {
                   title: "projects",
                   content: [
                     {
-                      icon: <SiReact size={20} />,
-                      name: "React",
+                      icon: <RiRobot2Fill size={20} />,
+                      name: "AI",
                     },
                     {
-                      icon: <SiHtml5 size={20} />,
-                      name: "HTML5",
-                    },
-                    {
-                      icon: <SiOpensourceinitiative size={20} />,
-                      name: "Contribution",
+                      icon: <SiEthereum size={20} />,
+                      name: "Blockchain",
                     },
                     {
                       icon: <SiNextdotjs size={20} />,
                       name: "NextJs",
                     },
                     {
+                      icon: <SiReact size={20} />,
+                      name: "React",
+                    },
+
+                    {
                       icon: <SiTypescript size={20} />,
                       name: "Typescript",
-                    },
-                    {
-                      icon: <SiNodedotjs size={20} />,
-                      name: "NodeJs",
-                    },
-                    {
-                      icon: <SiEthereum size={20} />,
-                      name: "Blockchain",
                     },
                   ].map((stack, index) => (
                     <div key={index}>
@@ -134,7 +120,7 @@ export default function Projects() {
           navTitle={filters.length ? filters.join("; ") : "Projects"}
           resetEntries={() => setFilters([])}
         >
-          <div className="grid md:grid-cols-3 gap-x-4 gap-y-12 w-full pt-6 md:px-8 px-4 pb-12 box-border overflow-y-scroll lg:grid-cols-3 grid-cols-1">
+          <div className="grid md:grid-cols-3 gap-6 w-full pt-6 md:px-8 px-4 pb-12 box-border overflow-y-scroll lg:grid-cols-3 grid-cols-1">
             {Children.toArray(
               filteredList.map((project) => {
                 return (

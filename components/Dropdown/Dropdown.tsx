@@ -39,10 +39,16 @@ export const Dropdown = ({
         </div>
       </nav>
       {entries?.length ? (
-        <div className="w-full m-0 p-0" {...getCollapseProps()}>
+        <div
+          className="w-full m-0"
+          {...getCollapseProps({ style: { padding: 0 } })}
+        >
           <ul className="pl-6">
             {entries?.map((entry) => (
-              <li key={entry} className="flex items-center gap-2 p-0 pt-2 text-foreground">
+              <li
+                key={entry}
+                className="flex items-center gap-2 p-0 pt-2 text-foreground"
+              >
                 <RiMarkdownFill /> <span>{entry}</span>
               </li>
             ))}

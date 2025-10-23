@@ -21,10 +21,6 @@ export default function RootLayout({
       </Head>
 
       <body>
-        <div
-          id="soltip-widget"
-          owner-data="EFzmBNRFz8cDpUrN8vMjh7jQexiWQr5E7LTzH9vokLMN"
-        ></div>
         <div className="flex flex-col h-full overflow-hidden bg-theme-background border border-theme-stroke rounded relative">
           <Navbar />
           <section className=" flex-1 relative overflow-auto mt-14 md:mt-0">
@@ -33,11 +29,6 @@ export default function RootLayout({
           <Footer />
         </div>
       </body>
-      <Script
-        src="https://soltip-widget.vercel.app/static/js/soltip-widget.js"
-        id="soltip-widget"
-        data-config="{'owner-data': 'EFzmBNRFz8cDpUrN8vMjh7jQexiWQr5E7LTzH9vokLMN', 'config': {'targetElementId': 'soltip-widget'}}"
-      />
     </html>
   );
 }

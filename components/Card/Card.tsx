@@ -42,7 +42,7 @@ export default function Card({
   githubUrl?: string;
 }) {
   return (
-    <div className="border border-[#314158] rounded-md flex-grow">
+    <div className="border border-primitive-slate-800 bg-primitive-slate-950 rounded-md flex-grow flex flex-col">
       <Image
         src={previewImg}
         width={200}
@@ -52,17 +52,16 @@ export default function Card({
         layout="responsive"
         objectFit="cover"
         alt={alt}
-        className="rounded-t-md"
       />
-      <div className="p-4 pt-0">
-        <p className="text-textColor text-[.95em]">{description}</p>
-        <div className="flex items-center justify-between mt-6">
+      <div className="p-4 border-t border-primitive-slate-800 h-max grow flex flex-col gap-4">
+        <p className="text-foreground text-sm line-clamp-2">{description}</p>
+        <div className="flex items-center justify-between mt-auto">
           <a
             href={previewLink}
             target="_blank"
             rel="noreferrer"
             aria-label={alt + " preview"}
-            className="text-[.95em] bg-[#1c2b3a] text-white px-4 py-2 rounded-md"
+            className="text-sm bg-primitive-slate-600 text-theme-heading-foreground px-4 py-2 rounded-md"
           >
             view-project
           </a>

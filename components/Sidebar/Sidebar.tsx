@@ -84,7 +84,7 @@ const Drawer = ({
         />
         <span>{title}</span>
       </div>
-      <ul className="p-2" {...getCollapseProps()}>
+      <ul {...getCollapseProps({ style: { padding: 0 } })}>
         {entries.map((entry, index) => (
           <li key={index} className="block">
             {entry}

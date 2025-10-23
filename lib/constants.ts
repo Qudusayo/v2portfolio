@@ -1,4 +1,4 @@
-const ABOUT_ME_TEXT = `I'm Abdulqudus, a Computer Science student and passionate Programmer.
+const ABOUT_ME_TEXT = `I'm Abdulqudus, a computer science enthusiast and passionate programmer.
 
 For me, programming isn't about the tools, it's about solving problems and creating meaningful impact. I see programming languages and frameworks as stepping stones, not limitations. What matters most is the solution.
 
