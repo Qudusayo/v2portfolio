@@ -69,7 +69,7 @@ export default function Contact() {
             />
           }
         >
-          <ContactForm formId={env.NEXT_PUBLIC_FORMSPREE_ID} />
+          <ContactForm formId={env.FORMSPREE_ID} />
         </BoxLayout>
       </div>
     </>

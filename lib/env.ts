@@ -1,7 +1,7 @@
 const requiredEnvVars = [
-  "NEXT_PUBLIC_CONTENTFUL_SPACE_ID",
-  "NEXT_PUBLIC_CONTENTFUL_DELIVERY_TOKEN",
-  "NEXT_PUBLIC_FORMSPREE_ID",
+  "CONTENTFUL_SPACE_ID",
+  "CONTENTFUL_DELIVERY_TOKEN",
+  "FORMSPREE_ID",
 ] as const;
 
 for (const key of requiredEnvVars) {
@@ -11,9 +11,9 @@ for (const key of requiredEnvVars) {
 }
 
 export const env = {
-  NEXT_PUBLIC_CONTENTFUL_SPACE_ID: process.env
-    .NEXT_PUBLIC_CONTENTFUL_SPACE_ID as string,
-  NEXT_PUBLIC_CONTENTFUL_DELIVERY_TOKEN: process.env
-    .NEXT_PUBLIC_CONTENTFUL_DELIVERY_TOKEN as string,
-  NEXT_PUBLIC_FORMSPREE_ID: process.env.NEXT_PUBLIC_FORMSPREE_ID as string,
+  CONTENTFUL_SPACE_ID: process.env
+    .CONTENTFUL_SPACE_ID as string,
+  CONTENTFUL_DELIVERY_TOKEN: process.env
+    .CONTENTFUL_DELIVERY_TOKEN as string,
+  FORMSPREE_ID: process.env.FORMSPREE_ID as string,
 };

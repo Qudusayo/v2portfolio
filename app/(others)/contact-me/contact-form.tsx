@@ -61,8 +61,8 @@ function ContactForm({ formId }: { formId: string }) {
     let key = e.currentTarget.name;
     let value = e.currentTarget.value;
 
-    setFormEntries((formEntrys) => ({
-      ...formEntrys,
+    setFormEntries((formEntries) => ({
+      ...formEntries,
       [key]: value,
     }));
   };
@@ -80,6 +80,9 @@ function ContactForm({ formId }: { formId: string }) {
               <input
                 placeholder="Ayoola Abdulqudus"
                 name="name"
+                type="text"
+                required
+                minLength={2}
                 value={formEntries.name}
                 onChange={formEntriesHandler}
               />
@@ -89,6 +92,8 @@ function ContactForm({ formId }: { formId: string }) {
               <input
                 placeholder="qqudusayo@gmail.com"
                 name="email"
+                type="email"
+                required
                 value={formEntries.email}
                 onChange={formEntriesHandler}
               />
@@ -99,6 +104,8 @@ function ContactForm({ formId }: { formId: string }) {
                 placeholder="Hey! Just checked your website and it looks awesome!"
                 rows={6}
                 name="message"
+                required
+                minLength={10}
                 value={formEntries.message}
                 onChange={formEntriesHandler}
                 className="resize-none"
@@ -116,7 +123,7 @@ function ContactForm({ formId }: { formId: string }) {
         >
           <h2>Thank you! 🤘</h2>
           <p>
-            Your message has been accepted. You will recieve answer really soon!
+            Your message has been accepted. You will receive an answer really soon!
           </p>
           <button onClick={resetFormEntries}>send-new-message</button>
         </div>

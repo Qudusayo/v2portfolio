@@ -8,8 +8,8 @@ import { env } from "@/lib/env";
 
 async function Page() {
   const client = createClient({
-    space: env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-    accessToken: env.NEXT_PUBLIC_CONTENTFUL_DELIVERY_TOKEN,
+    space: env.CONTENTFUL_SPACE_ID,
+    accessToken: env.CONTENTFUL_DELIVERY_TOKEN,
   });
 
   const entries = await client.getEntries({
