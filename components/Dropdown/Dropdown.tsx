@@ -34,7 +34,7 @@ export const Dropdown = ({
         />
         <div className="flex items-center gap-2">
           <RiFolder3Fill fill={folderFill} />
-          <span className={cn("p-0", isActive && "text-white")}>{title}</span>
+          <span className={cn(isActive ? "text-white" : "text-gray-400")}>{title}</span>
         </div>
       </nav>
       {entries?.length ? (

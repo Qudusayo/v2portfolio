@@ -35,7 +35,7 @@ export default function Projects({ projects }: { projects: ProjectTypes[] }) {
     } else {
       setFilteredList(projects);
     }
-  }, [filters]);
+  }, [filters, projects]);
 
   return (
     <>

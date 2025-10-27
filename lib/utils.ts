@@ -11,9 +11,9 @@ export function simplifyContentfulResponse(response: any) {
     assetMap.set(asset.sys.id, `https:${asset.fields.file.url}`);
   });
 
-  return response.items.map((item: any) => {
+  return (response.items || []).map((item: any) => {
     const { title, githubUrl, demoUrl, preview, description, categories } =
-      item.fields;
+      item.fields || {};
     const imageUrl = preview ? assetMap.get(preview.sys.id) : null;
 
     return {
