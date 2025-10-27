@@ -2,6 +2,7 @@ export default function DefaultTags() {
   return (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="preload" href="/bg-blur.svg" as="image" fetchPriority="high" />
       <link href="/favicon.ico" rel="shortcut icon" />
       <link
         rel="apple-touch-icon"
