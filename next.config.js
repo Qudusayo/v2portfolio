@@ -5,9 +5,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "res.cloudinary.com",
+        hostname: "images.ctfassets.net",
         port: "",
-        pathname: "/quelabs/image/upload/**/Portofolio-Projects/**",
       },
     ],
   },

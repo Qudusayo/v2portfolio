@@ -3,8 +3,6 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import Script from "next/script";
-import Head from "next/head";
 
 export default function RootLayout({
   children,
@@ -13,13 +11,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://soltip-widget.vercel.app/static/css/main.971b4cf2.css"
-        />
-      </Head>
-
       <body>
         <div className="flex flex-col h-full overflow-hidden bg-theme-background border border-theme-stroke rounded relative">
           <Navbar />
