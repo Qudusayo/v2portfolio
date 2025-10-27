@@ -1,8 +1,14 @@
-"use client";
-
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+
+import { Fira_Code } from 'next/font/google'
+
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-fira-code',
+})
 
 export default function RootLayout({
   children,
@@ -10,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={firaCode.className} suppressHydrationWarning>
       <body>
         <div className="flex flex-col h-full overflow-hidden bg-theme-background border border-theme-stroke rounded relative">
           <Navbar />
