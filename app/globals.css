@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Critical CSS - Above the fold styles */
+@layer base {
+  html {
+    font-family: var(--font-fira-code), monospace;
+  }
+  
+  body {
+    font-family: var(--font-fira-code), monospace;
+    background-color: #020618;
+    color: #90A1B9;
+  }
+}
+
 input:checked + div {
   @apply border-foreground;
   @apply bg-foreground;

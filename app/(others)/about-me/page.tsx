@@ -1,5 +1,6 @@
 "use client";
 
+import { lazy, Suspense } from "react";
 import BoxLayout from "@/layout/BoxLayout/BoxLayout";
 import { IoMail, IoCall } from "react-icons/io5";
 import { RiTerminalBoxFill, RiGamepadFill, RiUser4Fill } from "react-icons/ri";
@@ -7,7 +8,10 @@ import { IconContext } from "react-icons";
 import { Dropdown } from "@/components/Dropdown/Dropdown";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import Head from "@/extras/head";
-import LineNumberEditor from "@/components/LineNumberEditor";
+import { CONTACT } from "@/lib/constants";
+
+// Lazy load heavy components
+const LineNumberEditor = lazy(() => import("@/components/LineNumberEditor"));
 
 export default function About() {
   return (
@@ -21,7 +25,9 @@ export default function About() {
       </Head>
       <div>
         <BoxLayout sideBar={<FlexSideBar />} navTitle="personal-info">
-          <LineNumberEditor />
+          <Suspense fallback={<div className="text-theme-foreground">Loading...</div>}>
+            <LineNumberEditor />
+          </Suspense>
         </BoxLayout>
       </div>
     </>
@@ -71,22 +77,22 @@ const FlexSideBar = () => {
                 <a
                   key={0}
                   className="flex items-center gap-2 text-foreground py-2 px-2"
-                  href="mailto:qqudusayo@gmail.com"
+                  href={`mailto:${CONTACT.EMAIL}`}
                 >
                   <IconContext.Provider value={{ color: "#607b96" }}>
                     <IoMail />
                   </IconContext.Provider>
-                  <span className="text-[#607b96]">qqudusayo@gmail.com</span>
+                  <span className="text-[#607b96]">{CONTACT.EMAIL}</span>
                 </a>,
                 <a
                   key={1}
                   className="flex items-center gap-2 text-foreground py-2 px-2"
-                  href="tel:+2347016412041"
+                  href={`tel:${CONTACT.PHONE}`}
                 >
                   <IconContext.Provider value={{ color: "#607b96" }}>
                     <IoCall />
                   </IconContext.Provider>
-                  <span className="text-[#607b96]">+(234)701-6412-041</span>
+                  <span className="text-[#607b96]">{CONTACT.PHONE}</span>
                 </a>,
               ],
             },

@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={firaCode.className} suppressHydrationWarning>
-      <body>
+      <body suppressHydrationWarning>
         <div className="flex flex-col h-full overflow-hidden bg-theme-background border border-theme-stroke rounded relative">
           <Navbar />
           <section className=" flex-1 relative overflow-auto mt-14 md:mt-0">

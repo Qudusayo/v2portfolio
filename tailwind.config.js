@@ -22,6 +22,8 @@ module.exports = {
       "primitive-slate-600": "#45556C",
       "primitive-slate-800": "#1D293D",
       "primitive-slate-950": "#020618",
+      "primary-background": "#FFB86A",
+      "primary-hover": "#FFD6A7",
     },
   },
   plugins: [],

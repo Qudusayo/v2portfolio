@@ -6,4 +6,30 @@ I learn quickly, adapt to new challenges, and thrive in collaborative environmen
 
 Let's connect to collaborate, innovate, or exchange insights!`;
 
-export { ABOUT_ME_TEXT };
+const CONTACT = {
+  EMAIL: "hello@qudusayo.pro",
+  PHONE: "+2347016412041",
+  LINKEDIN: "https://www.linkedin.com/in/qudusayo/",
+  X: "https://twitter.com/qudusayo",
+  GITHUB: "https://github.com/qudusayo",
+
+  OTHERS: [
+    {
+      name: "Discord",
+      url: "https://discord.com/users/712416046317043762",
+    },
+    {
+      name: "Stackoverflow",
+      url: "https://stackoverflow.com/users/11659301/qudusayo",
+    },
+  ],
+};
+
+const NOT_FOUND_TEXT = `██╗  ██╗ ██████╗ ██╗  ██╗
+██║  ██║██╔═████╗██║  ██║
+███████║██║██╔██║███████║
+╚════██║████╔╝██║╚════██║
+     ██║╚██████╔╝     ██║
+     ╚═╝ ╚═════╝      ╚═╝`;
+
+export { ABOUT_ME_TEXT, CONTACT, NOT_FOUND_TEXT };

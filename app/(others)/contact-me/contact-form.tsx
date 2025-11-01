@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./contact-form.module.scss";
+import { CONTACT } from "@/lib/constants";
 
 const Pr = ({ val }: { val: string }) => (
   <span className={styles.pr}>{val}</span>
@@ -17,7 +18,16 @@ const Sy = ({ val }: { val: string }) => (
 );
 
 function ContactForm({ formId }: { formId: string }) {
-  let [day, mon, date] = Date().split(" ");
+  const [dateParts, setDateParts] = useState<{ day: string; mon: string; date: string }>({
+    day: "",
+    mon: "",
+    date: "",
+  });
+
+  useEffect(() => {
+    const [day, mon, date] = new Date().toString().split(" ");
+    setDateParts({ day, mon, date });
+  }, []);
 
   const [formEntries, setFormEntries] = useState({
     name: "",
@@ -90,7 +100,7 @@ function ContactForm({ formId }: { formId: string }) {
             <div className={styles.ContactFormBlock}>
               <label>_email:</label>
               <input
-                placeholder="qqudusayo@gmail.com"
+                placeholder={CONTACT.EMAIL}
                 name="email"
                 type="email"
                 required
@@ -111,7 +121,9 @@ function ContactForm({ formId }: { formId: string }) {
                 className="resize-none"
               ></textarea>
             </div>
-            <button>submit-message</button>
+            <button className="text-base outline-none border-none bg-primary-background text-theme-backdrop py-2 px-4 rounded-[7px] cursor-pointer hover:bg-primary-hover transition-all duration-300">
+              submit-message
+            </button>
           </div>
         </form>
 
@@ -123,7 +135,8 @@ function ContactForm({ formId }: { formId: string }) {
         >
           <h2>Thank you! 🤘</h2>
           <p>
-            Your message has been accepted. You will receive an answer really soon!
+            Your message has been accepted. You will receive an answer really
+            soon!
           </p>
           <button onClick={resetFormEntries}>send-new-message</button>
         </div>
@@ -180,7 +193,7 @@ function ContactForm({ formId }: { formId: string }) {
             <span className={styles.th}></span>
             <code>
               <Pr val=" date: " />
-              <Or val={`"${day} ${date} ${mon}"`} />
+              <Or val={dateParts.day && dateParts.date && dateParts.mon ? `"${dateParts.day} ${dateParts.date} ${dateParts.mon}"` : '""'} />
             </code>
           </span>
           <span className={styles.tr}>
@@ -224,7 +237,7 @@ function ContactForm({ formId }: { formId: string }) {
         </pre>
       </section>
       <section className="border-none !w-8 flex-none !py-2 !hidden md:!block">
-        <div className="h-1.5 w-4/5 mx-auto bg-foreground"></div>
+        <div className="h-1.5 w-4/6 mx-auto bg-foreground"></div>
       </section>
     </div>
   );

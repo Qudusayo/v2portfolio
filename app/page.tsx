@@ -12,8 +12,13 @@ export default function Home() {
         />
       </Head>
       <main
-        style={{ backgroundImage: "url('/bg-blur.svg')" }}
         className="bg-right bg-no-repeat bg-contain h-full bg-theme-background flex items-center md:h-[90.5%] md:mt-14 mt-0"
+        style={{ 
+          backgroundImage: "url('/bg-blur.svg')",
+          backgroundSize: 'contain',
+          backgroundPosition: 'right',
+          backgroundRepeat: 'no-repeat'
+        }}
       >
         <div className="m-auto md:w-3/4 w-11/12">
           <div className="text-[#e5e9f0]">

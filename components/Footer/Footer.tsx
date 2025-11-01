@@ -1,3 +1,4 @@
+import { CONTACT } from "@/lib/constants";
 import { RiGithubFill, RiLinkedinFill, RiTwitterXFill } from "react-icons/ri";
 
 export default function Footer() {
@@ -8,8 +9,8 @@ export default function Footer() {
       </div>
       <div className="flex items-center justify-center border-l border-theme-stroke ml-auto md:ml-0">
         <a
-          aria-label="Qudusayo linkedin profile"
-          href="https://www.linkedin.com/in/qudusayo/"
+          aria-label="Qudusayo LinkedIn profile"
+          href={CONTACT.LINKEDIN}
           target="_blank"
           rel="noreferrer"
           className="flex items-center justify-center p-4"
@@ -19,8 +20,8 @@ export default function Footer() {
       </div>
       <div className="flex items-center justify-center border-x border-theme-stroke">
         <a
-          aria-label="Qudusayo twitter profile"
-          href="https://twitter.com/qudusayo"
+          aria-label="Qudusayo X profile"
+          href={CONTACT.X}
           target="_blank"
           rel="noreferrer"
           className="flex items-center justify-center p-4"
@@ -31,10 +32,10 @@ export default function Footer() {
       <div className="md:ml-auto ml-0 flex items-center justify-center md:border-l border-theme-stroke">
         <a
           aria-label="Qudusayo github profile"
-          href="https://github.com/qudusayo/"
+          href={CONTACT.GITHUB}
           target="_blank"
           rel="noreferrer"
-          title="Qudusayo github profile"
+          title="Qudusayo Github profile"
           className="flex items-center justify-center p-4"
         >
           <span className="mr-2 hidden md:block">@qudusayo</span>

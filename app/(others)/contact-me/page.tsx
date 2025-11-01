@@ -5,6 +5,7 @@ import Sidebar from "@/components/Sidebar/Sidebar";
 import Head from "@/extras/head";
 import { env } from "@/lib/env";
 import ContactForm from "./contact-form";
+import { CONTACT } from "@/lib/constants";
 
 export default function Contact() {
   return (
@@ -25,44 +26,36 @@ export default function Contact() {
                     <a
                       key={0}
                       className="flex items-center gap-2 text-foreground p-2"
-                      href="mailto:qqudusayo@gmail.com"
+                      href={`mailto:${CONTACT.EMAIL}`}
                     >
                       <IoMail fill="#607b96" />
-                      <span>qqudusayo@gmail.com</span>
+                      <span>{CONTACT.EMAIL}</span>
                     </a>,
                     <a
                       key={1}
                       className="flex items-center gap-2 text-foreground p-2"
-                      href="tel:+2347016412041"
+                      href={`tel:${CONTACT.PHONE}`}
                     >
                       <IoCall fill="#607b96" />
-                      <span>+(234)701-6412-041</span>
+                      <span>{CONTACT.PHONE}</span>
                     </a>,
                   ],
                 },
                 {
                   title: "find-me-also-in",
                   content: [
-                    <a
-                      key={0}
-                      className="flex items-center gap-3 text-foreground p-2"
-                      href="http://discordapp.com/users/712416046317043762"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <IoOpenOutline fill="#607b96" />
-                      <span>Discord Profile</span>
-                    </a>,
-                    <a
-                      key={1}
-                      className="flex items-center gap-3 text-foreground p-2"
-                      href="https://stackoverflow.com/users/11659301/qudusayo"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <IoOpenOutline fill="#607b96" />
-                      <span>Stackoverflow Profile</span>
-                    </a>,
+                    ...CONTACT.OTHERS.map((other) => (
+                      <a
+                        key={other.name}
+                        className="flex items-center gap-3 text-foreground p-2"
+                        href={other.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <IoOpenOutline fill="#607b96" />
+                        <span>{other.name}</span>
+                      </a>
+                    )),
                   ],
                 },
               ]}
