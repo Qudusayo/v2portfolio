@@ -3,18 +3,32 @@ import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const secret = request.nextUrl.searchParams.get("secret");
+  console.log("🔔 Revalidation webhook called");
 
-  if (secret !== env.REVALIDATE_SECRET) {
+  const secret = request.nextUrl.searchParams.get("secret");
+  console.log("Secret provided:", secret ? "Yes" : "No");
+
+  if (secret !== process.env.REVALIDATE_SECRET) {
+    console.log("❌ Invalid secret");
     return NextResponse.json({ message: "Invalid token" }, { status: 401 });
   }
 
   try {
+    console.log("🔄 Attempting to revalidate /projects");
     revalidatePath("/projects");
-    return NextResponse.json({ revalidated: true, now: Date.now() });
+    console.log("✅ Revalidation successful");
+    return NextResponse.json({
+      revalidated: true,
+      now: Date.now(),
+      path: "/projects",
+    });
   } catch (err) {
+    console.error("❌ Revalidation error:", err);
     return NextResponse.json(
-      { message: "Error revalidating" },
+      {
+        message: "Error revalidating",
+        error: err,
+      },
       { status: 500 }
     );
   }
