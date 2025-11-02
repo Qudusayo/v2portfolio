@@ -1,7 +1,4 @@
-export const dynamic = "force-static";
-
 import { simplifyContentfulResponse } from "@/lib/utils";
-import React from "react";
 import Projects from "./projects";
 import { createClient } from "contentful";
 import { env } from "@/lib/env";
