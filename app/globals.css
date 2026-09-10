@@ -1,70 +1,61 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
 
-/* Critical CSS - Above the fold styles */
+/*
+ * Tailwind v4 puts utilities inside `@layer utilities`. Any unlayered rule wins
+ * over layered rules regardless of specificity, so global resets must live in
+ * `@layer base` or they override every p-*, m-*, text-*, outline-* utility.
+ */
 @layer base {
+  * {
+    font-family: var(--font-fira-code), monospace;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+  }
+
   html {
     font-family: var(--font-fira-code), monospace;
   }
-  
+
+  html,
+  body {
+    max-width: 100vw;
+    height: 100%;
+  }
+
   body {
     font-family: var(--font-fira-code), monospace;
-    background-color: #020618;
-    color: #90A1B9;
+    color: #90a1b9;
+    overflow: hidden;
+    @apply bg-theme-backdrop p-12;
+  }
+
+  @media screen and (max-width: 769px) {
+    body {
+      @apply p-3;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #__next {
+    height: 100%;
   }
 }
 
 input:checked + div {
-  @apply border-foreground;
-  @apply bg-foreground;
+  @apply border-foreground bg-foreground;
 }
 
 input:checked + div svg {
   @apply block;
-}
-
-* {
-  font-family: var(--font-fira-code), monospace;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  outline: none;
-}
-
-html,
-body {
-  max-width: 100vw;
-  height: 100%;
-}
-
-body {
-  @apply bg-theme-backdrop;
-  @apply p-12;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 769px) {
-  body {
-    @apply p-3;
-  }
-}
-
-img {
-  max-width: 100%;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
-
-#__next {
-  height: 100%;
 }

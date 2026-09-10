@@ -88,7 +88,7 @@ export default function Projects({ projects }: { projects: ProjectTypes[] }) {
                           checked={filters.includes(stack.name)}
                           onChange={() => filter(stack.name)}
                         />
-                        <div className="bg-transparent border rounded-sm border-theme-stroke w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2">
+                        <div className="bg-transparent border rounded-xs border-theme-stroke w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2">
                           <svg
                             className="fill-current hidden w-3 h-3 text-white pointer-events-none"
                             version="1.1"
